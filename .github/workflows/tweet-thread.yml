@@ -17,18 +17,18 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Install Claude Code CLI
-        run: npm install -g @anthropic-ai/claude-code
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install anthropic requests
 
       - name: Run Tweet Thread writer agent
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: |
-          claude -p "$(cat .github/prompts/tweet-thread.md)" \
-            --allowedTools "Read,Write,Edit" \
-            --model claude-sonnet-4-5 \
-            --no-ansi \
-            --output-format text
+        run: python3 .github/scripts/run_agent.py tweet-thread
 
       - name: Commit tweet thread
         run: |
