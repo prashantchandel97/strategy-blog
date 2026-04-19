@@ -28,6 +28,12 @@ summary: "[1-2 punchy sentences. This becomes the social post. Make it scroll-st
 
 The blog must:
 - Open with a hook — NOT "This week we looked at..." — use a fact, quote, or scene that creates immediate tension
+- Immediately after the hook, include a **TL;DR block** (under 200 words) formatted as:
+
+```
+> **TL;DR** — [The core argument in 3-4 punchy sentences. What happened, why it matters, and the one thing to take away. Write it so someone who reads only this still gets the full picture.]
+```
+
 - Build the puzzle before the answer
 - Weave in insights from both R and A entries naturally ("The deeper question is..." not "The Researcher said...")
 - Include one `> **Aside:** [fascinating tangent]` blockquote
