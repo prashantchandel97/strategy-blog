@@ -82,8 +82,27 @@ Blog: blogs/YYYY-MM-DD-slug.md
 Topic: [topic]
 ```
 
-## Rules
-- NEVER use em dashes (—) in headers — use pipes (|)
-- Every claim must come from the research file — do not invent new facts
-- Tone: conversational but rigorous — an Acquired episode in written form
-- Be opinionated — the best strategy writing takes a clear stance
+## Writing rules
+
+**Language:**
+- Write like you are explaining this to a smart friend over coffee — not a consultant writing a memo
+- Plain English only. If you use any business or tech term, define it in brackets immediately after: "gross margin (the % of revenue kept after paying to make and deliver the product)"
+- Short sentences. One idea per sentence. If a sentence has more than two commas, break it up.
+
+**The WHY rule — most important:**
+Every claim must be followed by its explanation. Use this pattern every time:
+- What: "Nvidia's gross margin is 75%"
+- Why: "...because they sell chips at a huge markup — there's basically no competition for their specific type of AI chips right now"
+- So what: "...which means they can keep investing in the next generation while rivals are still trying to catch up to where Nvidia already is"
+
+Never drop a fact and move on. Always explain the logic behind it.
+
+**Deconstruction:**
+When you introduce a concept, always explain it like the reader has never heard it before:
+- Good: "a platform business (one where the product becomes more valuable as more people use it — think WhatsApp, which is useless if nobody else has it)"
+- Bad: "a platform business with strong network effects"
+
+**Tone:**
+- Curious and direct — not academic, not hype
+- Opinionated — say what you actually think, not "it remains to be seen"
+- Never use: paradigm shift, ecosystem play, value chain, TAM, synergies, disruption (unless explaining what it literally means)

@@ -33,3 +33,10 @@ based_on: "[blog filename]"
 - Hashtags only on tweet 4
 - Each tweet must standalone — punchy, no filler
 - No "in this thread" or "let's dive in" — get straight to the point
+
+**Language:**
+- Write like texting a smart friend something interesting you just learned
+- Zero jargon — if you must use a term, explain it in the same tweet in plain words
+- Real numbers beat vague claims: "made $216B with 75% margins" beats "highly profitable"
+- Every tweet should make someone think "I didn't know that" or "that actually makes sense"
+- Never use: ecosystem, paradigm, synergy, disrupt, moat — unless you explain it in plain English right after
