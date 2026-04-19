@@ -56,12 +56,40 @@ def find_tweet_thread_for(blog_path: Path) -> Path:
     date_prefix = blog_path.stem[:10]  # YYYY-MM-DD
     thread_path = BLOGS_DIR / f"{date_prefix}-tweet-thread.md"
     if not thread_path.exists():
-        # Fall back to any tweet-thread from the same date
         candidates = list(BLOGS_DIR.glob(f"{date_prefix}*tweet-thread*.md"))
         if not candidates:
             raise FileNotFoundError(f"No tweet thread found for {blog_path.name}")
         return candidates[0]
     return thread_path
+
+
+def find_infographic_for(blog_path: Path) -> Path | None:
+    """Return the SVG infographic file for the given blog, or None if not found."""
+    date_prefix = blog_path.stem[:10]
+    svg_path = BLOGS_DIR / f"{date_prefix}-infographic.svg"
+    return svg_path if svg_path.exists() else None
+
+
+def svg_to_png(svg_path: Path) -> Path | None:
+    """Convert SVG to PNG using cairosvg. Returns PNG path or None on failure."""
+    try:
+        import cairosvg
+    except ImportError:
+        print("  [INFO] cairosvg not installed — skipping infographic image. Run: pip3 install cairosvg", file=sys.stderr)
+        return None
+
+    png_path = svg_path.with_suffix(".png")
+    try:
+        cairosvg.svg2png(
+            url=str(svg_path),
+            write_to=str(png_path),
+            output_width=800,
+        )
+        print(f"  Converted infographic: {png_path.name}")
+        return png_path
+    except Exception as e:
+        print(f"  [WARNING] SVG→PNG conversion failed: {e}", file=sys.stderr)
+        return None
 
 
 # ──────────────────────────────────────────────
@@ -173,33 +201,50 @@ def publish_blog(blog_data: dict, dry_run: bool = False) -> dict:
 # Twitter publishing
 # ──────────────────────────────────────────────
 
-def publish_tweet_thread(tweets: list[str], dry_run: bool = False) -> list[str]:
-    """Post a tweet thread. Each tweet replies to the previous one."""
+def publish_tweet_thread(tweets: list[str], png_path: Path | None = None, dry_run: bool = False) -> list[str]:
+    """Post a tweet thread. Attaches infographic PNG to tweet 1 if provided."""
     try:
         import tweepy
     except ImportError:
         print("  [ERROR] tweepy not installed. Run: pip3 install tweepy", file=sys.stderr)
         sys.exit(1)
 
-    consumer_key    = os.environ["TWITTER_CONSUMER_KEY"]
-    consumer_secret = os.environ["TWITTER_CONSUMER_SECRET"]
-    access_token    = os.environ["TWITTER_ACCESS_TOKEN"]
+    consumer_key        = os.environ["TWITTER_CONSUMER_KEY"]
+    consumer_secret     = os.environ["TWITTER_CONSUMER_SECRET"]
+    access_token        = os.environ["TWITTER_ACCESS_TOKEN"]
     access_token_secret = os.environ["TWITTER_ACCESS_TOKEN_SECRET"]
 
-    print(f"\n[Twitter] Posting {len(tweets)}-tweet thread")
+    print(f"\n[Twitter] Posting {len(tweets)}-tweet thread" +
+          (" + infographic image" if png_path else ""))
 
     if dry_run:
         for i, tweet in enumerate(tweets, 1):
-            print(f"  Tweet {i} ({len(tweet)} chars): {tweet[:80]}...")
+            suffix = " [+ image]" if i == 1 and png_path else ""
+            print(f"  Tweet {i} ({len(tweet)} chars){suffix}: {tweet[:80]}...")
         print("  [DRY RUN] No tweets posted.")
         return []
 
+    # v1.1 API needed for media upload
+    auth = tweepy.OAuth1UserHandler(consumer_key, consumer_secret, access_token, access_token_secret)
+    api_v1 = tweepy.API(auth)
+
+    # v2 client for creating tweets
     client = tweepy.Client(
         consumer_key=consumer_key,
         consumer_secret=consumer_secret,
         access_token=access_token,
         access_token_secret=access_token_secret,
     )
+
+    # Upload infographic if available
+    media_id = None
+    if png_path and png_path.exists():
+        try:
+            media = api_v1.media_upload(filename=str(png_path))
+            media_id = media.media_id
+            print(f"  Uploaded infographic (media_id: {media_id})")
+        except Exception as e:
+            print(f"  [WARNING] Image upload failed: {e} — posting without image", file=sys.stderr)
 
     posted_ids = []
     previous_id = None
@@ -209,6 +254,9 @@ def publish_tweet_thread(tweets: list[str], dry_run: bool = False) -> list[str]:
             kwargs = {"text": tweet_text}
             if previous_id:
                 kwargs["in_reply_to_tweet_id"] = previous_id
+            # Attach image to tweet 1 only
+            if i == 1 and media_id:
+                kwargs["media_ids"] = [media_id]
 
             response = client.create_tweet(**kwargs)
             tweet_id = response.data["id"]
@@ -216,14 +264,11 @@ def publish_tweet_thread(tweets: list[str], dry_run: bool = False) -> list[str]:
             previous_id = tweet_id
 
             print(f"  Posted tweet {i}/{len(tweets)} (id: {tweet_id})")
-
-            # Respect Twitter rate limits between tweets
             if i < len(tweets):
                 time.sleep(2)
 
         except tweepy.TweepyException as e:
             print(f"  [ERROR] Failed on tweet {i}: {e}", file=sys.stderr)
-            print(f"  Posted {i-1} tweets before failure. Last ID: {previous_id}")
             break
 
     print(f"  Thread posted. First tweet ID: {posted_ids[0] if posted_ids else 'none'}")
@@ -282,6 +327,12 @@ def main():
     blog_result = {}
     tweet_ids = []
 
+    # Find infographic SVG and convert to PNG
+    svg_path = find_infographic_for(blog_path)
+    png_path = svg_to_png(svg_path) if svg_path else None
+    if svg_path and not png_path:
+        print(f"  [INFO] No infographic PNG — tweets will post without image")
+
     # Publish blog
     if not args.twitter_only:
         blog_data = parse_blog(blog_path)
@@ -289,7 +340,6 @@ def main():
 
     # Publish tweet thread
     if not args.blog_only:
-        # Check required Twitter env vars
         required = ["TWITTER_CONSUMER_KEY", "TWITTER_CONSUMER_SECRET",
                     "TWITTER_ACCESS_TOKEN", "TWITTER_ACCESS_TOKEN_SECRET"]
         missing = [k for k in required if not os.environ.get(k)]
@@ -297,7 +347,7 @@ def main():
             print(f"\n[Twitter] Skipping — missing env vars: {', '.join(missing)}")
         else:
             tweets = parse_tweet_thread(tweet_path)
-            tweet_ids = publish_tweet_thread(tweets, dry_run=args.dry_run)
+            tweet_ids = publish_tweet_thread(tweets, png_path=png_path, dry_run=args.dry_run)
 
     # Log result
     write_publish_log(blog_path, blog_result, tweet_ids)

@@ -22,8 +22,11 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Install system dependencies
+        run: sudo apt-get install -y libcairo2-dev libffi-dev
+
       - name: Install dependencies
-        run: pip install requests tweepy pyyaml python-dotenv
+        run: pip install requests tweepy pyyaml python-dotenv cairosvg
 
       - name: Create .env from secrets
         run: |

@@ -67,6 +67,8 @@ Place it wrapped in a div for scrolling on mobile:
 </div>
 ```
 
+**Also save the SVG as a standalone file** using the Write tool at `blogs/YYYY-MM-DD-infographic.svg` (same date as the blog). This is used by the publisher to attach as an image to the first tweet on X. The SVG must be identical to the one embedded in the blog.
+
 ## Step 4: Update topics.md
 Edit `topics.md` to move covered topics to the Explored section with the date and blog title.
 
