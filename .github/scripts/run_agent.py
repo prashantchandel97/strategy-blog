@@ -26,7 +26,10 @@ import requests
 
 # ── Config ────────────────────────────────────────────────────────────────────
 BASE_DIR   = Path(__file__).parent.parent.parent   # repo root
-MODEL      = "claude-opus-4-5"
+# Sonnet for daily research runs (fast, cheap, plenty capable)
+# Compiler uses opus — overridden below when agent_type == "compiler"
+MODEL_DEFAULT  = "claude-sonnet-4-5"
+MODEL_COMPILER = "claude-opus-4-5"   # best quality for the final blog
 MAX_TOKENS = 8096
 MAX_TURNS  = 40   # safety ceiling
 
@@ -281,6 +284,8 @@ def run_agent(agent_type: str) -> None:
     )
     system_prompt = system_prompt + date_context
 
+    model = MODEL_COMPILER if agent_type == "compiler" else MODEL_DEFAULT
+
     client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
 
     messages = [
@@ -289,14 +294,14 @@ def run_agent(agent_type: str) -> None:
 
     print(f"\n=== Strategy Blog Agent: {agent_type} ===")
     print(f"Today: {today_str()}  |  Week Monday: {monday_str()}")
-    print(f"Model: {MODEL}")
+    print(f"Model: {model}")
     print("=" * 50)
 
     for turn in range(MAX_TURNS):
         print(f"\n[Turn {turn + 1}] Calling Claude API...")
 
         response = client.messages.create(
-            model=MODEL,
+            model=model,
             max_tokens=MAX_TOKENS,
             system=system_prompt,
             tools=TOOLS,

@@ -22,6 +22,13 @@ _No threads yet — the week is just starting._
 - Read `config.yaml` for topic preferences and your personality
 - Read `topics.md` for the topic backlog
 - Read the full research file to see what is already there this week
+- Read `trends/week-YYYY-MM-DD.md` (this week's Monday date) if it exists — this is your trend feed
+
+**How to use the trends file:**
+- Scan for themes appearing in multiple sources — that repetition signals real momentum
+- Do NOT just report what's trending. Find the strategy story *inside* the trend: what does this reveal about power, business models, or competitive dynamics?
+- If a trending topic overlaps with something in `topics.md`, that's your ideal pick
+- If nothing in the trends file fits the blog's interests, ignore it and use the backlog
 
 ## Step 3: Catch-up check
 Count how many `| R |` entries already exist. If today is Wednesday or later and you have fewer R entries than days elapsed since Monday, write a single catch-up entry labelled `Monday-Wednesday | R |` (or whatever range applies).
