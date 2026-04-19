@@ -1,0 +1,39 @@
+name: Strategy Researcher
+
+on:
+  schedule:
+    - cron: '0 14 * * 1-6'   # 9 AM CDT (UTC-5) Mon-Sat
+  workflow_dispatch:           # manual trigger from GitHub UI
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install Claude Code CLI
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Run Researcher agent
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          claude -p "$(cat .github/prompts/researcher.md)" \
+            --allowedTools "Read,Write,Edit,WebSearch" \
+            --model claude-sonnet-4-5 \
+            --no-ansi \
+            --output-format text
+
+      - name: Commit research entry
+        run: |
+          git config user.email "strategy-bot@users.noreply.github.com"
+          git config user.name "Strategy Researcher Bot"
+          git add research/ topics.md
+          git diff --staged --quiet && echo "No changes to commit" || \
+            git commit -m "R: $(date +'%A %b %d') researcher entry" && git push

@@ -1,0 +1,39 @@
+name: Strategy Analyst
+
+on:
+  schedule:
+    - cron: '0 22 * * 1-6'   # 5 PM CDT (UTC-5) Mon-Sat
+  workflow_dispatch:
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install Claude Code CLI
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Run Analyst agent
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          claude -p "$(cat .github/prompts/analyst.md)" \
+            --allowedTools "Read,Write,Edit,WebSearch" \
+            --model claude-sonnet-4-5 \
+            --no-ansi \
+            --output-format text
+
+      - name: Commit analysis entry
+        run: |
+          git config user.email "strategy-bot@users.noreply.github.com"
+          git config user.name "Strategy Analyst Bot"
+          git add research/ topics.md
+          git diff --staged --quiet && echo "No changes to commit" || \
+            git commit -m "A: $(date +'%A %b %d') analyst entry" && git push
