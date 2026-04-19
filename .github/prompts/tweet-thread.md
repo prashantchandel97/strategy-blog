@@ -17,37 +17,19 @@ based_on: "[blog filename]"
 
 # Tweet Thread: [Topic]
 
-🧵 1/ [Hook — bold claim or surprising fact. Max 280 chars. If it doesn't stop the scroll, nothing else matters.]
+🧵 1/ [Hook — the single most surprising fact or claim from the blog. Bold, specific, scroll-stopping. Max 280 chars.]
 
-2/ [Context — set up the story in 1-2 short sentences.]
+2/ [The core insight in 2-3 short sentences. What's the non-obvious thing most people are missing?]
 
-3/ [The non-obvious insight.]
+3/ [One hard data point + the implication. Why does this matter?]
 
-4/ [Hard data point — one concrete number or fact from the blog.]
-
-5/ [The tension or counter-argument — steelman the other side.]
-
-6/ [Why the counter does or doesn't hold.]
-
-7/ [Framework — name the pattern. Make it teachable in one sentence.]
-
-8/ [Historical parallel — one sentence.]
-
-9/ [The underappreciated angle or twist.]
-
-10/ [Implication — what happens next.]
-
-11/ [Practical so-what for one audience: investors, builders, or strategists.]
-
-12/ [Bold final opinion — clearest, most opinionated sentence in the thread.]
-
-13/ [CTA — "Full deep-dive at prashant-chandel.org/blog. Follow for weekly strategy threads." + #AI #Strategy #Tech]
+4/ [Bold take + CTA — "Full deep-dive at prashant-chandel.org/blog" + #AI #Strategy #Tech]
 ```
 
 ## Rules
-- Count every tweet — MUST be under 280 characters, no exceptions
+- Exactly 4 tweets — no more, no less
+- Every tweet MUST be under 280 characters, count carefully
 - No emojis except 🧵 on tweet 1
-- Hashtags only on the last tweet
-- Short punchy sentences — not blog prose
-- At least 2 concrete numbers from the blog
-- 12-14 tweets total
+- Hashtags only on tweet 4
+- Each tweet must standalone — punchy, no filler
+- No "in this thread" or "let's dive in" — get straight to the point
