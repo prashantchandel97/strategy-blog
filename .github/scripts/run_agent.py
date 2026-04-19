@@ -26,10 +26,10 @@ import requests
 
 # ── Config ────────────────────────────────────────────────────────────────────
 BASE_DIR   = Path(__file__).parent.parent.parent   # repo root
-# Sonnet for daily research runs (fast, cheap, plenty capable)
-# Compiler uses opus — overridden below when agent_type == "compiler"
-MODEL_DEFAULT  = "claude-sonnet-4-5"
-MODEL_COMPILER = "claude-opus-4-5"   # best quality for the final blog
+# Haiku for daily research/analyst runs (cheap, does the legwork)
+# Sonnet for compiler + tweet thread (does the actual thinking and writing)
+MODEL_DEFAULT  = "claude-haiku-4-5"
+MODEL_COMPILER = "claude-sonnet-4-5"
 MAX_TOKENS = 8096
 MAX_TURNS  = 40   # safety ceiling
 
@@ -284,7 +284,7 @@ def run_agent(agent_type: str) -> None:
     )
     system_prompt = system_prompt + date_context
 
-    model = MODEL_COMPILER if agent_type == "compiler" else MODEL_DEFAULT
+    model = MODEL_COMPILER if agent_type in ("compiler", "tweet-thread") else MODEL_DEFAULT
 
     client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
 
