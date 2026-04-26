@@ -6,10 +6,10 @@ based_on: "2026-04-19-enterprise-ai-os.md"
 
 # Tweet Thread: The Database Always Wins
 
-🧵 1/ Oracle launched 22 production AI agents in March. Almost zero coverage. Everyone's watching Salesforce vs ServiceNow fight to be the "enterprise AI OS." They're both missing what actually matters.
+🧵 1/ Oracle launched 22 production AI agents in March. SAP's cash agent cuts manual work by 80%. Almost no one noticed — because everyone's watching Salesforce vs ServiceNow fight to be the "enterprise AI operating system."
 
-2/ Every AI agent ultimately needs to write back to a system of record. The finance agent writes to ERP. The procurement agent writes to ERP. Those systems are Oracle and SAP — not Salesforce. Whoever owns the write-back owns the moat.
+2/ Here's what matters: every AI agent eventually needs to write back to a system of record. The agent that approves a purchase order writes to ERP. The agent that reconciles invoices writes to your financial system. SAP and Oracle own those systems.
 
-3/ SAP's Cash Management Agent cuts manual work by 80% in live deployments. Oracle's 22 agents are in production, not beta. But SAP has only 3% customer adoption. Deep data moat, terrible product velocity. That's the whole tension.
+3/ The 2000s middleware wars: TIBCO, WebMethods, BEA all fought to be the orchestration layer. They all got commoditized. The companies that owned where the data actually lived won. History is repeating itself and almost no one is paying attention.
 
-4/ This ends like the 2000s middleware wars: fragmentation into domain winners, not one platform to rule them all. The database always wins — just not immediately. Full story at prashant-chandel.org/blog #AI #Strategy #Enterprise
+4/ The catch: SAP Joule has 3% adoption among SAP's own customers. Oracle and SAP have the deepest moat but the worst product velocity. The race is distribution speed vs data depth. Full analysis: prashant-chandel.org/blog #AI #EnterpriseSoftware #Strategy
