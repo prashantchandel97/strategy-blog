@@ -41,14 +41,20 @@ load_dotenv(BASE_DIR / ".env")
 # ──────────────────────────────────────────────
 
 def find_latest_blog() -> Path:
-    """Return the most recently modified blog post (not a tweet-thread file)."""
+    """Return the most recently dated blog post (YYYY-MM-DD-*.md, not a tweet-thread)."""
+    import re as _re
+    date_pattern = _re.compile(r"^\d{4}-\d{2}-\d{2}-.+\.md$")
     candidates = [
         f for f in BLOGS_DIR.glob("*.md")
-        if "tweet-thread" not in f.name
+        if date_pattern.match(f.name)
+        and "tweet-thread" not in f.name
+        and "infographic" not in f.name
+        and f.stat().st_size > 0
     ]
     if not candidates:
-        raise FileNotFoundError(f"No blog files found in {BLOGS_DIR}")
-    return max(candidates, key=lambda f: f.stat().st_mtime)
+        raise FileNotFoundError(f"No dated blog files found in {BLOGS_DIR}")
+    # Sort by filename (date prefix) — most reliable, not mtime
+    return max(candidates, key=lambda f: f.name)
 
 
 def find_tweet_thread_for(blog_path: Path) -> Path:
