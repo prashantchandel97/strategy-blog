@@ -18,6 +18,7 @@ import json
 import os
 import re
 import sys
+import time
 from datetime import date, timedelta
 from pathlib import Path
 
@@ -286,7 +287,10 @@ def run_agent(agent_type: str) -> None:
 
     model = MODEL_COMPILER if agent_type in ("compiler", "tweet-thread") else MODEL_DEFAULT
 
-    client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+    client = anthropic.Anthropic(
+        api_key=os.environ["ANTHROPIC_API_KEY"],
+        max_retries=6,   # SDK handles exponential backoff on 429 automatically
+    )
 
     messages = [
         {"role": "user", "content": "Execute your task now. Follow your instructions step by step."}
@@ -347,6 +351,10 @@ def run_agent(agent_type: str) -> None:
                     })
 
             messages.append({"role": "user", "content": tool_results})
+
+            # Brief pause between turns — prevents bursting through the
+            # 30k input-tokens-per-minute rate limit on large context windows
+            time.sleep(8)
 
         else:
             # Unexpected stop reason
