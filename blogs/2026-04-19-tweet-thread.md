@@ -6,10 +6,10 @@ based_on: "2026-04-19-enterprise-ai-os.md"
 
 # Tweet Thread: The Database Always Wins
 
-🧵 1/ Oracle shipped 22 production AI agents in March. SAP's Cash Agent cut manual work by 80% in live deployments. Neither made headlines. Meanwhile everyone's watching Salesforce vs ServiceNow fight to be the "enterprise AI OS." Wrong game.
+🧵 1/ Oracle quietly shipped 22 AI agents in March. SAP's cash agent cuts manual work by 80% in production. Nobody covered it. Meanwhile everyone's watching Salesforce vs ServiceNow fight to be the "enterprise AI OS." They're fighting the wrong war.
 
-2/ Here's what matters: every AI agent in a company ultimately needs to write back to a system of record. Draft a sales email? That's CRM. But execute a supplier payment, update inventory, approve headcount? That's ERP. The write-back is where the moat actually is.
+2/ The real question isn't who orchestrates AI workflows — it's who owns the write-back. Every enterprise agent eventually needs to update a financial record, change inventory, or process payroll. That happens in ERP, not CRM. SAP and Oracle own that last mile.
 
-3/ SAP has 3% adoption of its AI agents among its own customers despite shipping 40+ agents. Salesforce and ServiceNow are moving faster with consumption pricing that's working right now. Near-term: CRM layers win on speed. Medium-term: whoever owns the write-back wins.
+3/ Salesforce has 3% of the Fortune 500's customer data. SAP has 77% of their transaction data. When an AI agent cancels an order, it writes to the ERP system of record — not the CRM that tracks the customer relationship. The database always wins, just not immediately.
 
-4/ The middleware wars of the 2000s taught this lesson once already — you can't win the orchestration layer from above. The database always wins. Full breakdown at prashant-chandel.org/blog #AI #Strategy #Enterprise
+4/ The middleware wars of the 2000s ended in fragmentation, not winner-take-all. Same pattern here: domain oligopolies, not a single enterprise AI OS. Full analysis: prashant-chandel.org/blog #AI #EnterpriseAI #Strategy
