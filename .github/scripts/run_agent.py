@@ -31,8 +31,8 @@ BASE_DIR   = Path(__file__).parent.parent.parent   # repo root
 # Sonnet for compiler + tweet thread (does the actual thinking and writing)
 MODEL_DEFAULT  = "claude-haiku-4-5"
 MODEL_COMPILER = "claude-sonnet-4-5"
-MAX_TOKENS = 8096
-MAX_TURNS  = 40   # safety ceiling
+MAX_TOKENS = 8192  # hard ceiling for claude-sonnet/haiku
+MAX_TURNS  = 60   # safety ceiling
 
 # ── Date helpers ──────────────────────────────────────────────────────────────
 
@@ -301,16 +301,32 @@ def run_agent(agent_type: str) -> None:
     print(f"Model: {model}")
     print("=" * 50)
 
+    # Compiler/tweet-thread read large files — need longer pauses to stay
+    # under the 30k input-tokens-per-minute rate limit.
+    inter_turn_sleep = 65 if agent_type in ("compiler", "tweet-thread") else 8
+
     for turn in range(MAX_TURNS):
         print(f"\n[Turn {turn + 1}] Calling Claude API...")
 
-        response = client.messages.create(
-            model=model,
-            max_tokens=MAX_TOKENS,
-            system=system_prompt,
-            tools=TOOLS,
-            messages=messages,
-        )
+        # Explicit 429 retry loop — SDK backoff isn't long enough for TPM limits
+        for attempt in range(8):
+            try:
+                response = client.messages.create(
+                    model=model,
+                    max_tokens=MAX_TOKENS,
+                    system=system_prompt,
+                    tools=TOOLS,
+                    messages=messages,
+                )
+                break  # success
+            except anthropic.RateLimitError as e:
+                wait = 65 * (attempt + 1)
+                print(f"  [429] Rate limited. Waiting {wait}s before retry {attempt + 1}/8...")
+                time.sleep(wait)
+                if attempt == 7:
+                    raise  # give up after 8 attempts
+        else:
+            break
 
         print(f"  stop_reason: {response.stop_reason}")
 
@@ -352,9 +368,10 @@ def run_agent(agent_type: str) -> None:
 
             messages.append({"role": "user", "content": tool_results})
 
-            # Brief pause between turns — prevents bursting through the
-            # 30k input-tokens-per-minute rate limit on large context windows
-            time.sleep(8)
+            # Pace calls to stay under 30k tokens/minute rate limit.
+            # Compiler handles large files so needs a full 65s window reset.
+            print(f"  Sleeping {inter_turn_sleep}s...")
+            time.sleep(inter_turn_sleep)
 
         else:
             # Unexpected stop reason
