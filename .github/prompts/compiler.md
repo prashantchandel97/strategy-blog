@@ -10,8 +10,15 @@ The Monday date of the current week is provided in your context (today is Sunday
 **Secondary input — read only if you need a specific detail or extra source:**
 `research/week-YYYY-MM-DD.md` — the full research log. Only dip into this for a specific fact or URL you can't find in the summary.
 
-## Step 2: Read config
+## Step 2: Read config and memory
 - Read `config.yaml` for blog style
+- Read `memory/editorial-memory.md` — this is your editorial brain. It tells you:
+  - What arguments this blog has already made (don't repeat, build on them)
+  - What concepts the audience already understands (don't re-explain from scratch)
+  - What narrative threads are developing (consider continuing them)
+  - What positions the blog has taken (stay consistent or consciously evolve with reasoning)
+  - What open questions were left unresolved (could be this week's angle)
+- Read `analytics/insights.md` — tells you which topic categories and hook styles drive the most engagement. Use this to sharpen focus when the week's research covers multiple possible angles.
 
 ## Step 3: Write the blog — IN STAGES (critical: do not write everything in one call)
 
@@ -48,17 +55,18 @@ Use append_to_file to add 2000-2500 words of body content:
 First, create the SVG file using write_file at `blogs/YYYY-MM-DD-infographic.svg`.
 
 SVG spec:
-- Self-contained, 800px wide, height 400-500px
-- Light background (#f9fafb), system-ui font, max 3 accent colours
+- Self-contained, coordinate space 800×450, always include `viewBox="0 0 800 450"` for responsive scaling
+- White background (#ffffff), system-ui font, max 3 accent colours
 - Pick ONE layout: landscape 2x2 map, comparison bars, or flow diagram
 - Include 3-5 real data points from the research
 - Caption: `prashant-chandel.org/blog`
+- CRITICAL: always include `viewBox="0 0 800 450"` and `style="width:100%;height:auto;"` so the SVG scales on all screen sizes
 
 Then use replace_in_file on the blog file to swap `[SVG_PLACEHOLDER]` with:
 ```html
-<div style="overflow-x:auto; margin: 2rem 0;">
-<svg width="800" height="450" xmlns="http://www.w3.org/2000/svg" style="font-family: system-ui, sans-serif; max-width:100%;">
-  <rect width="800" height="450" fill="#f9fafb" rx="12"/>
+<div style="margin: 2rem 0;">
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" style="font-family: system-ui, sans-serif; width:100%; height:auto; display:block;">
+  <rect width="800" height="450" fill="#ffffff" rx="12" stroke="#e5e7eb" stroke-width="1.5"/>
   <text x="400" y="36" text-anchor="middle" font-size="18" font-weight="bold" fill="#111">[Chart Title]</text>
   <!-- chart elements -->
   <text x="400" y="440" text-anchor="middle" font-size="11" fill="#9ca3af">prashant-chandel.org/blog</text>
@@ -66,14 +74,36 @@ Then use replace_in_file on the blog file to swap `[SVG_PLACEHOLDER]` with:
 </div>
 ```
 
-### Stage D — Append sources + mark research file complete
-Use append_to_file to add to the blog:
+### Stage D — Append sources + update memory + mark research complete
+
+**1. Append sources to the blog:**
 ```markdown
 ## Sources & Further Reading
 [all sources from the research file]
 ```
 
-Then append to the research file:
+**2. Append one entry to `memory/editorial-log.md`:**
+```markdown
+## YYYY-MM-DD | [Blog title slug]
+
+**Core argument**: [One sentence: what was argued and why it matters]
+
+**Frameworks established for audience**: [List any new mental models or frameworks introduced]
+
+**Concepts defined (audience now knows these)**: [Any terms formally explained for the first time]
+
+**Running threads**: [Does this post start or continue a multi-post arc? Name it.]
+
+**Positions taken**: [Any opinionated stances staked out]
+
+**Open questions left unresolved**: [2-3 questions the post raised but didn't answer]
+
+**Angle not taken (could be a future post)**: [What was left on the table]
+
+---
+```
+
+**3. Mark the research file complete:**
 ```
 ---
 ## Sunday | Compiled

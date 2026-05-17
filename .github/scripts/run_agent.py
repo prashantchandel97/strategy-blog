@@ -28,10 +28,11 @@ import requests
 # ── Config ────────────────────────────────────────────────────────────────────
 BASE_DIR   = Path(__file__).parent.parent.parent   # repo root
 # Haiku for daily research/analyst/summarizer runs (cheap, does the legwork)
-# Sonnet for compiler + tweet thread (does the actual thinking and writing)
-MODEL_DEFAULT  = "claude-haiku-4-5"
-MODEL_COMPILER = "claude-sonnet-4-5"
+# Sonnet for compiler + tweet thread + memory compressor (does the actual thinking and writing)
+MODEL_DEFAULT   = "claude-haiku-4-5"
+MODEL_COMPILER  = "claude-sonnet-4-5"
 MODEL_SUMMARIZER = "claude-haiku-4-5"
+MODEL_COMPRESSOR = "claude-sonnet-4-5"
 MAX_TOKENS = 8192  # hard ceiling for claude-sonnet/haiku
 MAX_TURNS  = 60   # safety ceiling
 
@@ -316,7 +317,7 @@ def run_agent(agent_type: str) -> None:
 
     system_prompt = system_prompt + date_context
 
-    if agent_type in ("compiler", "tweet-thread"):
+    if agent_type in ("compiler", "tweet-thread", "memory-compressor"):
         model = MODEL_COMPILER
     elif agent_type == "summarizer":
         model = MODEL_SUMMARIZER
@@ -340,7 +341,7 @@ def run_agent(agent_type: str) -> None:
     # Compiler/tweet-thread read large files — need longer pauses to stay
     # under the 30k input-tokens-per-minute rate limit.
     # Summarizer reads the full research file too so gets the same treatment.
-    inter_turn_sleep = 65 if agent_type in ("compiler", "tweet-thread", "summarizer") else 8
+    inter_turn_sleep = 65 if agent_type in ("compiler", "tweet-thread", "summarizer", "memory-compressor") else 8
 
     for turn in range(MAX_TURNS):
         print(f"\n[Turn {turn + 1}] Calling Claude API...")
@@ -428,7 +429,7 @@ if __name__ == "__main__":
         sys.exit(1)
 
     agent_type = sys.argv[1]
-    valid = {"researcher", "analyst", "compiler", "tweet-thread", "summarizer"}
+    valid = {"researcher", "analyst", "compiler", "tweet-thread", "summarizer", "memory-compressor"}
     if agent_type not in valid:
         print(f"ERROR: Unknown agent type '{agent_type}'. Must be one of: {valid}", file=sys.stderr)
         sys.exit(1)

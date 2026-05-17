@@ -1,0 +1,37 @@
+name: Memory Compressor
+
+on:
+  schedule:
+    - cron: '0 14 1-7 * 1'   # First Monday of each month at 9 AM CDT (2 PM UTC)
+  workflow_dispatch:
+
+jobs:
+  compress:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install anthropic requests
+
+      - name: Run memory compressor agent
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python3 .github/scripts/run_agent.py memory-compressor
+
+      - name: Commit compressed memory
+        run: |
+          git config user.email "strategy-bot@users.noreply.github.com"
+          git config user.name "Strategy Memory Bot"
+          git add analytics/insights.md memory/editorial-memory.md
+          git diff --staged --quiet && echo "No changes to memory" || \
+            git commit -m "Memory: $(date +'%B %Y') compression pass" && git push

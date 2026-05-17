@@ -296,12 +296,13 @@ def write_publish_log(blog_path: Path, blog_result: dict, tweet_ids: list[str]):
             log = []
 
     log.append({
-        "timestamp":     datetime.now().isoformat(),
-        "blog_file":     blog_path.name,
-        "blog_slug":     blog_result.get("post", {}).get("slug") or blog_result.get("slug"),
-        "blog_status":   "skipped" if blog_result.get("skipped") else ("dry_run" if blog_result.get("dry_run") else "published"),
-        "tweet_count":   len(tweet_ids),
+        "timestamp":      datetime.now().isoformat(),
+        "blog_file":      blog_path.name,
+        "blog_slug":      blog_result.get("post", {}).get("slug") or blog_result.get("slug"),
+        "blog_status":    "skipped" if blog_result.get("skipped") else ("dry_run" if blog_result.get("dry_run") else "published"),
+        "tweet_count":    len(tweet_ids),
         "first_tweet_id": tweet_ids[0] if tweet_ids else None,
+        "tweet_ids":      tweet_ids,  # all IDs stored for engagement tracking
     })
 
     log_path.write_text(json.dumps(log, indent=2))

@@ -23,6 +23,7 @@ _No threads yet — the week is just starting._
 - Read `topics.md` for the topic backlog
 - Read the full research file to see what is already there this week
 - Read `trends/week-YYYY-MM-DD.md` (this week's Monday date) if it exists — this is your trend feed
+- Read `analytics/insights.md` — shows which topic categories drive the most engagement with this audience. If the file says "Pending data", ignore it. Otherwise, use it to break ties between equally interesting topics: lean toward what the audience has shown it cares about.
 
 **How to use the trends file:**
 - Scan for themes appearing in multiple sources — that repetition signals real momentum
