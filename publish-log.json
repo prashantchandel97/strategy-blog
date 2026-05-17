@@ -38,5 +38,13 @@
     "blog_status": "skipped",
     "tweet_count": 4,
     "first_tweet_id": "2056070887145717996"
+  },
+  {
+    "timestamp": "2026-05-17T18:34:07.286154",
+    "blog_file": "2026-05-11-vertical-integration-not-silicon.md",
+    "blog_slug": "2026-05-11-vertical-integration-not-silicon",
+    "blog_status": "published",
+    "tweet_count": 6,
+    "first_tweet_id": "2056080793529712666"
   }
 ]
