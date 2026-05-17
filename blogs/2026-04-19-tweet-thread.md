@@ -6,10 +6,10 @@ based_on: "2026-04-19-enterprise-ai-os.md"
 
 # Tweet Thread: The Database Always Wins
 
-🧵 1/ Oracle launched 22 AI agents in March. SAP is cutting cash reconciliation work by 80% in production. Nobody noticed. Meanwhile everyone watches Salesforce vs ServiceNow fight to be the "enterprise AI operating system." They're fighting the wrong war.
+🧵 1/ Oracle launched 22 production AI agents in March. SAP's Cash Management Agent is cutting manual work by 80% in live deployments. Neither made headlines. Meanwhile everyone's watching Salesforce vs ServiceNow fight to be the "enterprise AI OS."
 
-2/ Here's what matters: every AI agent eventually needs to write back to a system of record — the place where transactions actually happen. Draft a payment? That goes into ERP. Update inventory? ERP again. Salesforce owns your CRM. But SAP and Oracle own where money moves.
+2/ Here's what everyone's missing: every AI agent doing real work in a company eventually needs to write back to a system of record. The agent doesn't just draft the supplier payment — it executes it. That write-back happens in ERP, not CRM.
 
-3/ SAP has shipped 40+ agents and 2,400 skills. Only 3% of their customers use them in production. So distribution speed beats data depth — for now. But in 2-3 years, whoever controls the write-back to financial systems owns the durable position. That's not a CRM company.
+3/ Salesforce owns your customer data. But when its agent needs to update an order, modify headcount, or settle a transaction, it's writing to someone else's system. SAP and Oracle own the systems where enterprise actions actually happen — finance, supply chain, procurement.
 
-4/ The middleware wars of the 2000s ended in fragmentation, not a winner-take-all OS. This probably does too — with Oracle/SAP owning back-office, Salesforce owning front-office, and someone unexpected capturing the tax in between. Full analysis: prashant-chandel.org/blog #AI #Strategy #Enterprise
+4/ The orchestration war is real, but it's the middleware wars all over again. Distribution speed vs data depth. Full analysis: prashant-chandel.org/blog #AI #Enterprise #SaaS
