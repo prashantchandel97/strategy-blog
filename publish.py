@@ -333,6 +333,20 @@ def main():
     blog_result = {}
     tweet_ids = []
 
+    # Check publish log — have tweets already been sent for this blog?
+    tweets_already_sent = False
+    log_path = BASE_DIR / "publish-log.json"
+    if log_path.exists():
+        try:
+            log = json.loads(log_path.read_text())
+            for entry in log:
+                if entry.get("blog_file") == blog_path.name and entry.get("tweet_count", 0) > 0:
+                    tweets_already_sent = True
+                    print(f"[Twitter] Tweets already sent for {blog_path.name} (id: {entry.get('first_tweet_id')}). Skipping.")
+                    break
+        except Exception:
+            pass
+
     # Find infographic SVG and convert to PNG
     svg_path = find_infographic_for(blog_path)
     png_path = svg_to_png(svg_path) if svg_path else None
@@ -345,7 +359,7 @@ def main():
         blog_result = publish_blog(blog_data, dry_run=args.dry_run)
 
     # Publish tweet thread
-    if not args.blog_only:
+    if not args.blog_only and not tweets_already_sent:
         required = ["TWITTER_CONSUMER_KEY", "TWITTER_CONSUMER_SECRET",
                     "TWITTER_ACCESS_TOKEN", "TWITTER_ACCESS_TOKEN_SECRET"]
         missing = [k for k in required if not os.environ.get(k)]

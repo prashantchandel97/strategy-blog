@@ -103,7 +103,10 @@ def tool_list_directory(path: str) -> str:
     if not p.exists():
         return f"ERROR: Directory not found: {path}"
     try:
-        entries = sorted(p.iterdir(), key=lambda x: x.stat().st_mtime, reverse=True)
+        # Sort alphabetically by name — YYYY-MM-DD filenames sort chronologically.
+        # Do NOT sort by mtime: in GitHub Actions all files share the same checkout
+        # timestamp, making mtime-based ordering unreliable.
+        entries = sorted(p.iterdir(), key=lambda x: x.name)
         lines = []
         for e in entries:
             kind = "dir" if e.is_dir() else "file"
@@ -284,6 +287,33 @@ def run_agent(agent_type: str) -> None:
         f"- Monday of this week: {monday_str()}\n"
         f"- This week's research file: research/week-{monday_str()}.md\n"
     )
+
+    # For tweet-thread: inject the exact blog file to process.
+    # list_directory mtime ordering is unreliable in CI (all files share checkout
+    # timestamp), so we resolve the latest dated blog in Python and tell the agent.
+    if agent_type == "tweet-thread":
+        import re as _re
+        date_pat = _re.compile(r"^\d{4}-\d{2}-\d{2}-.+\.md$")
+        blogs_dir = BASE_DIR / "blogs"
+        candidates = [
+            f for f in blogs_dir.glob("*.md")
+            if date_pat.match(f.name)
+            and "tweet-thread" not in f.name
+            and "infographic" not in f.name
+            and f.stat().st_size > 0
+        ]
+        if candidates:
+            latest_blog = max(candidates, key=lambda f: f.name)
+            blog_slug   = latest_blog.stem   # e.g. 2026-05-11-vertical-integration-not-silicon
+            blog_date   = latest_blog.name[:10]  # e.g. 2026-05-11
+            date_context += (
+                f"- **Blog to thread**: blogs/{latest_blog.name}\n"
+                f"- **Blog slug**: {blog_slug}\n"
+                f"- **Blog date**: {blog_date}\n"
+                f"- **Tweet thread file to write**: blogs/{blog_date}-tweet-thread.md\n"
+                f"- **Blog URL for CTA**: https://prashant-chandel.org/blog/{blog_slug}\n"
+            )
+
     system_prompt = system_prompt + date_context
 
     if agent_type in ("compiler", "tweet-thread"):
