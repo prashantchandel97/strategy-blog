@@ -1,0 +1,39 @@
+name: Daily Summarizer
+
+on:
+  schedule:
+    - cron: '0 23 * * 1-6'   # 6 PM CDT (UTC-5) Mon-Sat, 1hr after analyst
+  workflow_dispatch:
+
+jobs:
+  summarize:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install anthropic requests
+
+      - name: Run Summarizer agent
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python3 .github/scripts/run_agent.py summarizer
+
+      - name: Commit summary
+        run: |
+          git config user.email "strategy-bot@users.noreply.github.com"
+          git config user.name "Strategy Summarizer Bot"
+          git add research/summary-*.md
+          git diff --staged --quiet && echo "No changes to commit" || \
+            git commit -m "Summary: $(date +'%A %b %d') rolling summary updated" && git push
