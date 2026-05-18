@@ -2,7 +2,7 @@ name: Daily Poster
 
 on:
   schedule:
-    - cron: '0 16 * * 1-6'   # 11 AM CDT (UTC-5) Mon-Sat — 2hrs after researcher finishes
+    - cron: '0 16 * * 1,3,5'   # 11 AM CDT (UTC-5) Mon/Wed/Fri only — 2hrs after researcher
   workflow_dispatch:
 
 jobs:

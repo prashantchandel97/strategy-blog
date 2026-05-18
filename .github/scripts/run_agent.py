@@ -324,8 +324,8 @@ def run_agent(agent_type: str) -> None:
 
     system_prompt = system_prompt + date_context
 
-    if agent_type in ("compiler", "tweet-thread", "memory-compressor"):
-        model = MODEL_COMPILER
+    if agent_type in ("compiler", "tweet-thread", "memory-compressor", "daily-poster"):
+        model = MODEL_COMPILER   # Sonnet — quality matters for public-facing tweets
     elif agent_type == "summarizer":
         model = MODEL_SUMMARIZER
     else:
@@ -348,7 +348,7 @@ def run_agent(agent_type: str) -> None:
     # Compiler/tweet-thread read large files — need longer pauses to stay
     # under the 30k input-tokens-per-minute rate limit.
     # Summarizer reads the full research file too so gets the same treatment.
-    inter_turn_sleep = 65 if agent_type in ("compiler", "tweet-thread", "summarizer", "memory-compressor") else 8
+    inter_turn_sleep = 65 if agent_type in ("compiler", "tweet-thread", "summarizer", "memory-compressor", "daily-poster") else 8
 
     for turn in range(MAX_TURNS):
         print(f"\n[Turn {turn + 1}] Calling Claude API...")
