@@ -1,8 +1,10 @@
 name: Daily Poster
 
 on:
-  schedule:
-    - cron: '0 16 * * 1,3,5'   # 11 AM CDT (UTC-5) Mon/Wed/Fri only — 2hrs after researcher
+  # PAUSED: daily auto-posting replaced by daily-brief.yml (human-in-the-loop)
+  # Re-enable by uncommenting the schedule block below.
+  # schedule:
+  #   - cron: '0 16 * * 1,3,5'   # 11 AM CDT (UTC-5) Mon/Wed/Fri
   workflow_dispatch:
 
 jobs:

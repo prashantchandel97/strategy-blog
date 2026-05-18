@@ -322,10 +322,17 @@ def run_agent(agent_type: str) -> None:
             f"- **Today's format slot**: {date.today().strftime('%A')} — see format table in your instructions\n"
         )
 
+    # For brief-generator: inject today's brief output path and day context
+    if agent_type == "brief-generator":
+        date_context += (
+            f"- **Brief file to write**: briefs/brief-{today_str()}.md\n"
+            f"- **Today's day**: {date.today().strftime('%A')}\n"
+        )
+
     system_prompt = system_prompt + date_context
 
-    if agent_type in ("compiler", "tweet-thread", "memory-compressor", "daily-poster"):
-        model = MODEL_COMPILER   # Sonnet — quality matters for public-facing tweets
+    if agent_type in ("compiler", "tweet-thread", "memory-compressor", "daily-poster", "brief-generator"):
+        model = MODEL_COMPILER   # Sonnet — quality matters for public-facing drafts
     elif agent_type == "summarizer":
         model = MODEL_SUMMARIZER
     else:
@@ -348,7 +355,7 @@ def run_agent(agent_type: str) -> None:
     # Compiler/tweet-thread read large files — need longer pauses to stay
     # under the 30k input-tokens-per-minute rate limit.
     # Summarizer reads the full research file too so gets the same treatment.
-    inter_turn_sleep = 65 if agent_type in ("compiler", "tweet-thread", "summarizer", "memory-compressor", "daily-poster") else 8
+    inter_turn_sleep = 65 if agent_type in ("compiler", "tweet-thread", "summarizer", "memory-compressor", "daily-poster", "brief-generator") else 8
 
     for turn in range(MAX_TURNS):
         print(f"\n[Turn {turn + 1}] Calling Claude API...")
@@ -436,7 +443,7 @@ if __name__ == "__main__":
         sys.exit(1)
 
     agent_type = sys.argv[1]
-    valid = {"researcher", "analyst", "compiler", "tweet-thread", "summarizer", "memory-compressor", "daily-poster"}
+    valid = {"researcher", "analyst", "compiler", "tweet-thread", "summarizer", "memory-compressor", "daily-poster", "brief-generator"}
     if agent_type not in valid:
         print(f"ERROR: Unknown agent type '{agent_type}'. Must be one of: {valid}", file=sys.stderr)
         sys.exit(1)
