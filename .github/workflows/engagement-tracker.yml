@@ -23,16 +23,12 @@ jobs:
       - name: Install dependencies
         run: pip install tweepy python-dotenv requests
 
-      - name: Create .env from secrets
-        run: |
-          cat > .env <<EOF
-          TWITTER_CONSUMER_KEY=${{ secrets.TWITTER_CONSUMER_KEY }}
-          TWITTER_CONSUMER_SECRET=${{ secrets.TWITTER_CONSUMER_SECRET }}
-          TWITTER_ACCESS_TOKEN=${{ secrets.TWITTER_ACCESS_TOKEN }}
-          TWITTER_ACCESS_TOKEN_SECRET=${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
-          EOF
-
       - name: Run engagement tracker
+        env:
+          TWITTER_CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_KEY }}
+          TWITTER_CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
         run: python3 engagement_tracker.py
 
       - name: Commit analytics
@@ -41,4 +37,4 @@ jobs:
           git config user.name "Strategy Engagement Bot"
           git add analytics/weekly/
           git diff --staged --quiet && echo "No new analytics" || \
-            git commit -m "Analytics: $(date +'%b %d') engagement tracked" && git push
+            git commit -m "Analytics: $(date +'%b %d') engagement tracked" && git pull --rebase && git push

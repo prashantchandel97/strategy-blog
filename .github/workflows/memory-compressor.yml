@@ -34,4 +34,4 @@ jobs:
           git config user.name "Strategy Memory Bot"
           git add analytics/insights.md memory/editorial-memory.md
           git diff --staged --quiet && echo "No changes to memory" || \
-            git commit -m "Memory: $(date +'%B %Y') compression pass" && git push
+            git commit -m "Memory: $(date +'%B %Y') compression pass" && git pull --rebase && git push

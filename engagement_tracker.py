@@ -65,10 +65,20 @@ def fetch_tweet_metrics(client: tweepy.Client, tweet_ids: list[str]) -> list[dic
     if not tweet_ids:
         return []
 
-    response = client.get_tweets(
-        ids=tweet_ids,
-        tweet_fields=["public_metrics", "text", "created_at"],
-    )
+    try:
+        response = client.get_tweets(
+            ids=tweet_ids,
+            tweet_fields=["public_metrics", "text", "created_at"],
+        )
+    except tweepy.Unauthorized:
+        print("  [ERROR] Twitter API returned 401 Unauthorized.")
+        print("  Check that your Twitter app has Read permissions enabled at developer.twitter.com")
+        print("  App settings -> User authentication settings -> Permissions -> Read")
+        print("  After changing permissions, regenerate your access tokens and update GitHub Secrets.")
+        return []
+    except tweepy.TweepyException as e:
+        print(f"  [ERROR] Twitter API error: {e}")
+        return []
 
     if not response.data:
         print("  [WARNING] No tweet data returned from API.")
