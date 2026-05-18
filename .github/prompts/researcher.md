@@ -50,12 +50,30 @@ Use the Edit tool to append to the research file. Use pipes, never em dashes:
 
 **Sources:** [URLs found via WebSearch]
 **Open questions:** [2-3 specific questions for the Analyst]
+**[Daily-tweetable]:** [The single best standalone fact, number, or quote from this entry — under 240 characters, no em dashes. Something that makes a smart person think "huh, I didn't know that." Real numbers beat vague claims.]
 
 ---
 
 ```
 
 Also update the "Strongest Threads This Week" section at the top of the file.
+
+## Topic rotation
+
+The daily poster needs variety — do not let the week be all AI/tech. Each week should touch at least 3-4 distinct domains from this list:
+
+- AI and infrastructure (chips, cloud, models)
+- Retail and consumer (Costco, Shein, D2C brands, unit economics)
+- Fintech and payments (Stripe, BNPL, card networks, UPI, neobanks)
+- Media and distribution (Netflix, Spotify, YouTube, newsletters)
+- Healthcare economics (PBMs, GLP-1s, hospital vs. specialty clinic)
+- Industrials (Boeing, Caterpillar, supply chain, logistics)
+- India tech ecosystem (Jio, Zomato, ONDC, Paytm, fintech)
+- Energy and commodities (LNG, solar, Aramco vs. shale)
+- Defense and dual-use (Anduril, Palantir, SpaceX)
+- Enterprise SaaS and B2B (Salesforce, Snowflake, ServiceNow)
+
+If AI/tech has dominated the week's research, explicitly find a non-AI story for today's entry.
 
 ## Rules
 - NEVER use em dashes (—) in entry headers — always pipes (|)

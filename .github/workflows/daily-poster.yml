@@ -1,0 +1,53 @@
+name: Daily Poster
+
+on:
+  schedule:
+    - cron: '0 16 * * 1-6'   # 11 AM CDT (UTC-5) Mon-Sat — 2hrs after researcher finishes
+  workflow_dispatch:
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install anthropic requests tweepy pyyaml python-dotenv
+
+      - name: Run daily poster agent
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python3 .github/scripts/run_agent.py daily-poster
+
+      - name: Commit daily tweet file
+        run: |
+          git config user.email "strategy-bot@users.noreply.github.com"
+          git config user.name "Strategy Daily Bot"
+          git add tweets/
+          git diff --staged --quiet && echo "No tweet file written" || \
+            git commit -m "Daily tweet: $(date +'%a %b %d')" && git pull --rebase && git push
+
+      - name: Post to Twitter
+        env:
+          TWITTER_CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_KEY }}
+          TWITTER_CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+        run: python3 daily_publisher.py
+
+      - name: Commit publish log
+        run: |
+          git config user.email "strategy-bot@users.noreply.github.com"
+          git config user.name "Strategy Daily Bot"
+          git add publish-log.json
+          git diff --staged --quiet && echo "Nothing to log" || \
+            git commit -m "Log: daily tweet posted $(date +'%b %d')" && git pull --rebase && git push

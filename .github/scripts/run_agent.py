@@ -315,6 +315,13 @@ def run_agent(agent_type: str) -> None:
                 f"- **Blog URL for CTA**: https://prashant-chandel.org/blog/{blog_slug}\n"
             )
 
+    # For daily-poster: inject today's exact output file path
+    if agent_type == "daily-poster":
+        date_context += (
+            f"- **Daily tweet file to write**: tweets/daily-{today_str()}.md\n"
+            f"- **Today's format slot**: {date.today().strftime('%A')} — see format table in your instructions\n"
+        )
+
     system_prompt = system_prompt + date_context
 
     if agent_type in ("compiler", "tweet-thread", "memory-compressor"):
@@ -429,7 +436,7 @@ if __name__ == "__main__":
         sys.exit(1)
 
     agent_type = sys.argv[1]
-    valid = {"researcher", "analyst", "compiler", "tweet-thread", "summarizer", "memory-compressor"}
+    valid = {"researcher", "analyst", "compiler", "tweet-thread", "summarizer", "memory-compressor", "daily-poster"}
     if agent_type not in valid:
         print(f"ERROR: Unknown agent type '{agent_type}'. Must be one of: {valid}", file=sys.stderr)
         sys.exit(1)
