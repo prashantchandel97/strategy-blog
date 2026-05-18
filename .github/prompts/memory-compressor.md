@@ -12,6 +12,8 @@ You have two tasks. Do both in order.
 
 ### Write a new `analytics/insights.md`
 
+**Important:** Tweet-level metrics (impressions, likes, retweets) are not automatically tracked — they require a paid Twitter API tier. The weekly JSON files contain `tweet_metrics: null` for these fields unless manually filled in. Only use tweet metric data if it is actually present (not null) in the JSON files. Follower count and delta ARE tracked automatically.
+
 Structure (keep under 700 words total):
 
 ```markdown
@@ -19,25 +21,30 @@ Structure (keep under 700 words total):
 
 _Updated: YYYY-MM-DD. Based on N weeks of data._
 
+**Note on metrics:** Tweet-level data (impressions, likes, retweets) requires Twitter API Basic tier and is not automatically tracked. Follower count is tracked weekly.
+
+---
+
+## Follower Growth
+
+| Week | Followers | Delta |
+|------|-----------|-------|
+[one row per weekly JSON, sorted by date]
+
 ---
 
 ## Engagement Patterns
 
-### Topic Categories (ranked by avg engagement score)
-1. [Category] — avg score X.X, avg hook impressions XX,XXX
-2. ...
+[Only populate if tweet_metrics are non-null in the weekly JSONs. Otherwise write "Pending data."]
 
-### Hook Styles (what stops the scroll)
-- [Style, e.g. "counterintuitive acquisition story"] — avg impressions XX,XXX
-- [Style] — avg impressions XX,XXX
+### Topic Categories
+_Pending data._
+
+### Hook Styles
+_Pending data._
 
 ### Thread Length
-- Best performing: N tweets (avg score X.X)
-- Worst performing: N tweets (avg score X.X)
-
-### Drop-off
-- Average completion rate (tweet 5+ reached): XX%
-- Threads that dropped sharply at tweet N: [patterns]
+_Pending data._
 
 ---
 

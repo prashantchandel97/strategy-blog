@@ -2,40 +2,29 @@
 
 _Updated by the memory-compressor agent. Agents read this file — never the raw weekly JSONs._
 
+**Note on metrics:** Tweet-level data (impressions, likes, retweets) requires Twitter API Basic tier and is not automatically tracked. Follower count is tracked weekly. Check analytics.twitter.com for tweet performance and paste into the weekly JSON if needed.
+
+---
+
+## Follower Growth
+
+| Week | Followers | Delta |
+|------|-----------|-------|
+| 2026-05-11 | 50 | baseline |
+
 ---
 
 ## Engagement Patterns
 
-_Not enough data yet. Will populate after 4+ weeks of tracking._
+_Not enough data yet. Populate once tweet metrics are available manually or via API upgrade._
 
-### Topic Categories (by avg engagement score)
+### Topic Categories
 _Pending data._
 
 ### Hook Styles (what stops the scroll)
 _Pending data._
 
 ### Thread Length
-_Pending data._
-
-### Drop-off Patterns
-_Pending data._
-
----
-
-## Audience Signals
-
-### What drives replies (curiosity vs. pushback)
-_Pending data._
-
-### What gets bookmarked (reference value)
-_Pending data._
-
-### What gets retweeted (shareability)
-_Pending data._
-
----
-
-## Follower Growth
 _Pending data._
 
 ---
@@ -51,4 +40,4 @@ _Pending data._
 
 ---
 
-_Last updated: never (no data yet)_
+_Last updated: 2026-05-18 (1 week tracked, follower count only)_
