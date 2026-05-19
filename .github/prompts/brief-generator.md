@@ -13,7 +13,9 @@ List the `tweets/` directory and read any `daily-YYYY-MM-DD.md` files from this 
 
 Look for `## [Today's day] | R |` in the research file.
 
-**If no entry exists:** Write a single-line file at the brief output path with just the text `SKIP` and stop. This is normal if the researcher has not yet finished.
+**If today's entry is missing:** Fall back to the most recent R entry in the file (the last `## ... | R |` section). This handles timezone edge cases where the runner's clock is slightly ahead. Note in the brief which day's research you are using.
+
+**If the file has no R entries at all:** Write a single-line file at the brief output path with just the text `SKIP` and stop.
 
 ## Step 3: Find the best insights
 
