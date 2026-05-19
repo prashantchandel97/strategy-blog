@@ -47,6 +47,6 @@ jobs:
         run: |
           git config user.email "strategy-bot@users.noreply.github.com"
           git config user.name "Strategy Brief Bot"
-          git add briefs/brief-log.json
+          git add briefs/ || true
           git diff --staged --quiet && echo "Nothing to log" || \
             git commit -m "Log: brief sent $(date +'%b %d')" && git pull --rebase && git push
