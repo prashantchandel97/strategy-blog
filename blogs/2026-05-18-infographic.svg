@@ -1,0 +1,54 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" style="font-family: system-ui, sans-serif; width:100%; height:auto; display:block;">
+  <!-- Background -->
+  <rect width="800" height="450" fill="#ffffff" rx="12" stroke="#e5e7eb" stroke-width="1.5"/>
+  
+  <!-- Title -->
+  <text x="400" y="36" text-anchor="middle" font-size="18" font-weight="bold" fill="#111">The AI Market Split: Bundlers vs. Transparent Pricers</text>
+  
+  <!-- Left Side: Cost-Hiding Bundlers -->
+  <rect x="40" y="70" width="340" height="320" fill="#f0f9ff" rx="8" stroke="#3b82f6" stroke-width="2"/>
+  <text x="210" y="100" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e40af">Cost-Hiding Bundlers</text>
+  <text x="210" y="125" text-anchor="middle" font-size="13" fill="#3b82f6">80%+ of market</text>
+  
+  <!-- Bundlers: Companies -->
+  <text x="60" y="155" font-size="13" font-weight="600" fill="#111">Microsoft, Google, Apple, Meta</text>
+  
+  <!-- Bundlers: Key metrics -->
+  <text x="60" y="185" font-size="12" fill="#374151">• Office 365: 365M users</text>
+  <text x="60" y="205" font-size="12" fill="#374151">• Copilot bundled → invisible cost</text>
+  <text x="60" y="225" font-size="12" fill="#374151">• NRR: 115%+</text>
+  
+  <text x="60" y="255" font-size="12" font-weight="600" fill="#1e40af">Strategy:</text>
+  <text x="60" y="275" font-size="11" fill="#374151">Spread AI costs across millions</text>
+  <text x="60" y="290" font-size="11" fill="#374151">of existing users. Cost per user:</text>
+  <text x="60" y="305" font-size="11" fill="#374151">invisible. Adoption: frictionless.</text>
+  
+  <text x="60" y="335" font-size="12" font-weight="600" fill="#1e40af">Business model:</text>
+  <text x="60" y="355" font-size="11" fill="#374151">Lose money on inference, gain</text>
+  <text x="60" y="370" font-size="11" fill="#374151">on retention, upsells, device sales</text>
+  
+  <!-- Right Side: Cost-Transparent Specialists -->
+  <rect x="420" y="70" width="340" height="320" fill="#fef2f2" rx="8" stroke="#ef4444" stroke-width="2"/>
+  <text x="590" y="100" text-anchor="middle" font-size="16" font-weight="bold" fill="#991b1b">Cost-Transparent Specialists</text>
+  <text x="590" y="125" text-anchor="middle" font-size="13" fill="#ef4444">5–20% of market</text>
+  
+  <!-- Specialists: Companies -->
+  <text x="440" y="155" font-size="13" font-weight="600" fill="#111">OpenAI, Anthropic, SaaS add-ons</text>
+  
+  <!-- Specialists: Key metrics -->
+  <text x="440" y="185" font-size="12" fill="#374151">• OpenAI: $1.35 spent per $1 earned</text>
+  <text x="440" y="205" font-size="12" fill="#374151">• Salesforce AI: 5–8% adoption</text>
+  <text x="440" y="225" font-size="12" fill="#374151">• Per-token pricing visible to customers</text>
+  
+  <text x="440" y="255" font-size="12" font-weight="600" fill="#991b1b">Problem:</text>
+  <text x="440" y="275" font-size="11" fill="#374151">Customers see exact per-query cost.</text>
+  <text x="440" y="290" font-size="11" fill="#374151">Adoption collapses or margins</text>
+  <text x="440" y="305" font-size="11" fill="#374151">compress under negotiation pressure.</text>
+  
+  <text x="440" y="335" font-size="12" font-weight="600" fill="#991b1b">Viable segments:</text>
+  <text x="440" y="355" font-size="11" fill="#374151">• Frontier reasoning (high-value niches)</text>
+  <text x="440" y="370" font-size="11" fill="#374151">• On-device AI (one-time chip cost)</text>
+  
+  <!-- Footer -->
+  <text x="400" y="440" text-anchor="middle" font-size="11" fill="#9ca3af">prashant-chandel.org/blog</text>
+</svg>

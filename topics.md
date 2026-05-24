@@ -16,3 +16,4 @@ their own topics via web search for current events.
 - The "app store" moment for AI agents — who captures the distribution? (covered: 2026-04-19, "enterprise-ai-os")
 - Custom silicon as a moat: hyperscalers' vertical integration advantage (covered: 2026-05-11, "The Real AI Infrastructure Moat Isn't Custom Silicon—It's Owning The Whole Stack")
 - The inference startup graveyard: Groq, SambaNova, Cerebras consolidation and what it means for AI infrastructure M&A (covered: 2026-05-11, "The Real AI Infrastructure Moat Isn't Custom Silicon—It's Owning The Whole Stack")
+- AI infrastructure cost visibility and market bifurcation (covered: 2026-05-18, "The Invisible Tax: Why AI's Winners Hide the Bill" — SaaS pricing under AI pressure, power infrastructure as bottleneck, on-device vs. cloud inference split, bundling vs. transparent pricing as market organizer)
