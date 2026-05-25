@@ -54,22 +54,97 @@ Use append_to_file to add 2000-2500 words of body content:
 ### Stage C — Write the SVG infographic, then inject it into the blog
 First, create the SVG file using write_file at `blogs/YYYY-MM-DD-infographic.svg`.
 
-SVG spec:
-- Self-contained, coordinate space 800×450, always include `viewBox="0 0 800 450"` for responsive scaling
-- White background (#ffffff), system-ui font, max 3 accent colours
-- Pick ONE layout: landscape 2x2 map, comparison bars, or flow diagram
-- Include 3-5 real data points from the research
-- Caption: `prashant-chandel.org/blog`
-- CRITICAL: always include `viewBox="0 0 800 450"` and `style="width:100%;height:auto;"` so the SVG scales on all screen sizes
+**SVG Design Standard — McKinsey/Gartner quality. Follow every rule below.**
+
+**Canvas:**
+- Size: 800×480, `viewBox="0 0 800 480"`, `style="width:100%;height:auto;display:block;"`
+- Background: full rect `fill="#F8FAFC"` (off-white, not pure white)
+- Font: `font-family="Inter, system-ui, -apple-system, sans-serif"`
+
+**Color system — use ONLY these:**
+- Dark navy (headers, primary text): `#0F172A`
+- Medium navy (section labels): `#1E3A5F`
+- Accent blue (key numbers, highlights): `#2563EB`
+- Accent amber (secondary highlight): `#F59E0B`
+- Positive green: `#059669`
+- Negative red: `#DC2626`
+- Card background: `#FFFFFF`
+- Border/grid: `#E2E8F0`
+- Body text: `#475569`
+- Muted text: `#94A3B8`
+
+**Typography hierarchy — use EXACTLY these sizes:**
+- Chart title: `font-size="19" font-weight="700" fill="#0F172A"`
+- Panel/column headers: `font-size="13" font-weight="600" fill="#1E3A5F"`
+- Key metric callout (the big number): `font-size="30" font-weight="700" fill="#2563EB"`
+- Metric label beneath the number: `font-size="11" fill="#94A3B8"`
+- Body / bullet text: `font-size="12" fill="#475569"` — line-height ~18px spacing
+- Annotation text: `font-size="11" font-weight="500" fill="#0F172A"`
+- Source line: `font-size="10" fill="#94A3B8"`
+
+**Required structural elements — every infographic must have all of these:**
+
+1. **Dark header band** — full-width rect: `x="0" y="0" width="800" height="52" fill="#0F172A"` with title centered in white: `fill="#FFFFFF" font-size="19" font-weight="700"`
+   - Add a 3px accent stripe at the very top: `x="0" y="0" width="800" height="3" fill="#2563EB"`
+
+2. **White content cards** — each major section is a `rect` with `fill="#FFFFFF" rx="8" stroke="#E2E8F0" stroke-width="1"` and a subtle shadow using a slightly offset duplicate rect in `fill="#0000000D"` (3px down/right)
+
+3. **Key metric callout** — at least one number displayed at 30px+ in `#2563EB` with a small label below it. This is the anchor the reader's eye lands on first.
+
+4. **Column/section header bars** — thin top-border accent on each card: a small `rect` at the top edge of each white card, height 3, in the card's accent color (`#2563EB` or `#F59E0B`)
+
+5. **Source line** — bottom-right: `x="790" y="472" text-anchor="end" font-size="10" fill="#94A3B8"` — text: `prashant-chandel.org/blog`
+
+6. **Subtle grid lines** (charts with axes only) — horizontal dashed lines: `stroke="#E2E8F0" stroke-width="1" stroke-dasharray="4 4"`
+
+**Chart type — pick the ONE that best fits the data:**
+
+**A. Side-by-side comparison cards** (2-3 options, qualitative + quantitative):
+- Cards positioned at equal widths with 12px gap
+- Each card: header bar in accent color, big metric at top, bullet points below
+- Bullet points: use `●` or `▸` as SVG text, 12px, `#475569`, with 18px line spacing
+- DO NOT use boxes around every bullet — clean list format only
+
+**B. Horizontal bar chart** (rankings, market shares, comparisons):
+- Bars: height 26px, `rx="4"`, sorted largest-to-smallest
+- Value label: right-aligned at bar end, `font-size="12" font-weight="600" fill="#0F172A"`
+- Category label: left-aligned before bar, `font-size="12" fill="#475569"`, max 20 chars
+- Bars in primary accent color with 30% opacity version for secondary bars
+- Grid lines behind bars, subtle dashed `#E2E8F0`
+
+**C. 2x2 strategic matrix** (positioning, quadrants):
+- Axes: `stroke="#94A3B8" stroke-width="1.5"`, with axis labels at ends in `#475569 font-size="11"`
+- Quadrant backgrounds: alternating very light fills (e.g. `#EFF6FF` and `#F0FDF4` for adjacent quadrants)
+- Named entities: each as a circle `r="6" fill="#2563EB"` with label text beside it
+- Quadrant labels: top-right of each quadrant, `font-size="12" font-weight="600" fill="#94A3B8"`
+- Arrow heads on axes pointing toward the positive direction
+
+**D. Flow / causal chain diagram** (how X causes Y causes Z):
+- Boxes: `rx="6" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.5"`, 130×40px each
+- Connecting arrows: `stroke="#94A3B8" stroke-width="1.5"` with `marker-end` arrowhead
+- Box labels: centered, `font-size="12" font-weight="600" fill="#0F172A"`
+- Sub-labels beneath boxes: `font-size="10" fill="#94A3B8"`
+
+**E. Timeline** (historical progression, milestones):
+- Spine: horizontal line `y=center stroke="#E2E8F0" stroke-width="2"`
+- Milestone circles: `r="8" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"`
+- Year labels: below each circle, `font-size="11" font-weight="600" fill="#0F172A"`
+- Event labels: above each circle, `font-size="11" fill="#475569"`, centered
+
+**What makes this McKinsey-quality — required checklist:**
+- [ ] Every number on the chart has context (a label explaining what it is)
+- [ ] Visual hierarchy is clear: one element commands attention first (the big number or headline comparison)
+- [ ] White space is generous — padding inside cards is at least 16px
+- [ ] No more than 3 accent colors used
+- [ ] The chart title tells the CONCLUSION, not the topic (e.g. "Bundlers Win on Margin, Specialists Win on Niche" not "AI Market Comparison")
+- [ ] No diagonal text, no text smaller than 10px
+- [ ] Source attribution always present
 
 Then use replace_in_file on the blog file to swap `[SVG_PLACEHOLDER]` with:
 ```html
 <div style="margin: 2rem 0;">
-<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" style="font-family: system-ui, sans-serif; width:100%; height:auto; display:block;">
-  <rect width="800" height="450" fill="#ffffff" rx="12" stroke="#e5e7eb" stroke-width="1.5"/>
-  <text x="400" y="36" text-anchor="middle" font-size="18" font-weight="bold" fill="#111">[Chart Title]</text>
-  <!-- chart elements -->
-  <text x="400" y="440" text-anchor="middle" font-size="11" fill="#9ca3af">prashant-chandel.org/blog</text>
+<svg viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg" style="font-family: Inter, system-ui, sans-serif; width:100%; height:auto; display:block;">
+  <!-- infographic content here -->
 </svg>
 </div>
 ```
