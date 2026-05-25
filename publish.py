@@ -58,6 +58,20 @@ def find_latest_blog() -> Path:
     return max(candidates, key=lambda f: f.name)
 
 
+AUDIO_CACHE = BASE_DIR / "audio-cache.json"
+
+
+def read_audio_url() -> str | None:
+    """Read pre-generated audio URL from audio-cache.json if available."""
+    if not AUDIO_CACHE.exists():
+        return None
+    try:
+        data = json.loads(AUDIO_CACHE.read_text())
+        return data.get("audio_url")
+    except Exception:
+        return None
+
+
 def find_tweet_thread_for(blog_path: Path) -> Path:
     """Return the tweet thread file that corresponds to the given blog."""
     date_prefix = blog_path.stem[:10]  # YYYY-MM-DD
@@ -75,6 +89,13 @@ def find_infographic_for(blog_path: Path) -> Path | None:
     date_prefix = blog_path.stem[:10]
     svg_path = BLOGS_DIR / f"{date_prefix}-infographic.svg"
     return svg_path if svg_path.exists() else None
+
+
+def find_contrarian_thread_for(blog_path: Path) -> Path | None:
+    """Return the contrarian thread file for the given blog, or None."""
+    date_prefix = blog_path.stem[:10]
+    p = BLOGS_DIR / f"{date_prefix}-contrarian-thread.md"
+    return p if p.exists() and p.stat().st_size > 0 else None
 
 
 def find_cover_for(blog_path: Path) -> Path | None:
@@ -263,8 +284,9 @@ def publish_blog(blog_data: dict, dry_run: bool = False) -> dict:
 # Twitter publishing
 # ──────────────────────────────────────────────
 
-def publish_tweet_thread(tweets: list[str], png_path: Path | None = None, dry_run: bool = False) -> list[str]:
-    """Post a tweet thread. Attaches infographic PNG to tweet 1 if provided."""
+def publish_tweet_thread(tweets: list[str], png_path: Path | None = None, dry_run: bool = False, reply_to_id: str | None = None) -> list[str]:
+    """Post a tweet thread. Attaches infographic PNG to tweet 1 if provided.
+    If reply_to_id is set, the first tweet replies to that ID (for contrarian threads)."""
     try:
         import tweepy
     except ImportError:
@@ -309,7 +331,7 @@ def publish_tweet_thread(tweets: list[str], png_path: Path | None = None, dry_ru
             print(f"  [WARNING] Image upload failed: {e} — posting without image", file=sys.stderr)
 
     posted_ids = []
-    previous_id = None
+    previous_id = reply_to_id  # contrarian thread starts as reply to main tweet 1
 
     for i, tweet_text in enumerate(tweets, 1):
         try:
@@ -427,6 +449,10 @@ def main():
         if cover_url:
             blog_data["coverImage"] = cover_url
             print(f"  Cover image: {cover_url}")
+        audio_url = read_audio_url()
+        if audio_url:
+            blog_data["audioUrl"] = audio_url
+            print(f"  Audio: {audio_url}")
         blog_result = publish_blog(blog_data, dry_run=args.dry_run)
 
     # Publish tweet thread
@@ -439,6 +465,20 @@ def main():
         else:
             tweets = parse_tweet_thread(tweet_path)
             tweet_ids = publish_tweet_thread(tweets, png_path=png_path, dry_run=args.dry_run)
+
+            # Post contrarian thread as reply to tweet 1
+            contrarian_path = find_contrarian_thread_for(blog_path)
+            if contrarian_path and tweet_ids:
+                print(f"\n[Twitter] Posting contrarian reply thread...")
+                contrarian_tweets = parse_tweet_thread(contrarian_path)
+                publish_tweet_thread(
+                    contrarian_tweets,
+                    png_path=None,
+                    dry_run=args.dry_run,
+                    reply_to_id=tweet_ids[0],
+                )
+            elif contrarian_path and not tweet_ids:
+                print(f"  [Skip] No main tweet ID — cannot attach contrarian thread")
 
     # Log result
     write_publish_log(blog_path, blog_result, tweet_ids)

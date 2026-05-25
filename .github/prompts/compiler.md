@@ -38,10 +38,19 @@ summary: "[1-2 punchy sentences. This becomes the social post. Make it scroll-st
 
 > **TL;DR** — [The core argument in 3-4 punchy sentences. What happened, why it matters, and the one thing to take away.]
 
+**In this piece:**
+- [Complete sentence describing the first major thing this post explains or argues — specific, not vague]
+- [Complete sentence for second thing — each bullet should standalone as a reason to keep reading]
+- [Third thing]
+- [Fourth thing — optional]
+- [Fifth thing — optional, only if genuinely distinct from above]
+
 [SVG_PLACEHOLDER]
 ```
 
 Write `[SVG_PLACEHOLDER]` literally — you will replace it with the actual SVG in Stage C.
+
+The "In this piece" bullets must be complete sentences that preview the actual argument, not topic labels. Bad: "Microsoft bundling strategy". Good: "Microsoft hides AI costs inside Office 365, which is why its margins hold while OpenAI's collapse."
 
 ### Stage B — Append the blog body
 Use append_to_file to add 2000-2500 words of body content:
@@ -192,7 +201,20 @@ Cover image spec:
 ---
 ```
 
-**3. Mark the research file complete:**
+**3. Update `scorecard/scorecard.md`:**
+Find any company sections in the scorecard that appear in this week's research. For each, add or update a row with the most recent metric and date. If the company does not have a section yet and appeared in the research with quantitative data, create one. Only use numbers that came directly from the research — never estimate.
+
+Format per company:
+```markdown
+## [Company Name] ([TICKER])
+*Last updated: YYYY-MM-DD*
+
+| Metric | Value | Period | Source |
+|--------|-------|--------|--------|
+| [e.g. Revenue growth YoY] | [e.g. 17%] | [e.g. Q1 2026] | [e.g. Earnings call] |
+```
+
+**4. Mark the research file complete:**
 ```
 ---
 ## Sunday | Compiled

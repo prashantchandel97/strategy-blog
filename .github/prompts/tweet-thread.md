@@ -71,3 +71,41 @@ End with the blog link and 2-3 hashtags. Format:
 ## Character check
 
 Before writing the file, count each tweet character by character. If any tweet exceeds 280 characters, shorten it. Do not approximate.
+
+## Step 3: Write the contrarian thread
+
+After saving the main thread, write a second file: `blogs/YYYY-MM-DD-contrarian-thread.md`
+
+This is a 3-5 tweet reply thread that steelmans the strongest case AGAINST the blog's argument. It gets posted as a reply to tweet 1 of the main thread.
+
+**Why this matters:** Intellectual honesty builds trust. The reader who is skeptical of the main argument will respect that you already thought of their objection. It also drives engagement — people reply to disagree, and the contrarian thread gives them something to engage with.
+
+**How to write it:**
+- Tweet 1: "Here is the strongest case against everything I just argued." (Start with this exact framing or similar. Under 100 chars.)
+- Tweets 2-4: Each steelmans one real counter-argument with specific evidence. Not a strawman. If the blog argued "bundlers win," the contrarian might say "but Salesforce tried this and it backfired — here is why bundling fails when the product is too complex."
+- Final tweet: "Both things can be true. The outcome depends on [the one key variable that decides it]."
+
+**Rules — same as main thread:**
+- Under 280 characters each
+- No em dashes, no hashtags
+- Real names and numbers — not vague hedging
+- The contrarian must be genuinely threatening to the main argument, not a softball
+
+Format:
+```markdown
+---
+type: contrarian-thread
+date: YYYY-MM-DD
+based_on: "[blog filename]"
+---
+
+1/ Here is the strongest case against everything I just argued.
+
+2/ [Counter-argument 1 with specific evidence]
+
+3/ [Counter-argument 2]
+
+4/ [Counter-argument 3 — optional]
+
+5/ Both things can be true. The outcome depends on [the deciding variable].
+```
