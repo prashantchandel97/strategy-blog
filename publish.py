@@ -77,25 +77,39 @@ def find_infographic_for(blog_path: Path) -> Path | None:
 
 
 def svg_to_png(svg_path: Path) -> Path | None:
-    """Convert SVG to PNG using cairosvg. Returns PNG path or None on failure."""
+    """Convert SVG to PNG. Tries rsvg-convert first (reliable on Ubuntu CI),
+    falls back to cairosvg. Returns PNG path or None on failure."""
+    import subprocess
+    png_path = svg_path.with_suffix(".png")
+
+    # Method 1: rsvg-convert (librsvg2-bin) — most reliable on Ubuntu
+    try:
+        result = subprocess.run(
+            ["rsvg-convert", "-w", "800", "-f", "png", "-o", str(png_path), str(svg_path)],
+            capture_output=True, timeout=30,
+        )
+        if result.returncode == 0 and png_path.exists() and png_path.stat().st_size > 0:
+            print(f"  Converted infographic via rsvg-convert: {png_path.name}")
+            return png_path
+        else:
+            print(f"  [INFO] rsvg-convert failed (rc={result.returncode}), trying cairosvg...", file=sys.stderr)
+    except (FileNotFoundError, subprocess.TimeoutExpired):
+        print("  [INFO] rsvg-convert not found, trying cairosvg...", file=sys.stderr)
+
+    # Method 2: cairosvg fallback
     try:
         import cairosvg
+        cairosvg.svg2png(url=str(svg_path), write_to=str(png_path), output_width=800)
+        if png_path.exists() and png_path.stat().st_size > 0:
+            print(f"  Converted infographic via cairosvg: {png_path.name}")
+            return png_path
     except ImportError:
-        print("  [INFO] cairosvg not installed — skipping infographic image. Run: pip3 install cairosvg", file=sys.stderr)
-        return None
-
-    png_path = svg_path.with_suffix(".png")
-    try:
-        cairosvg.svg2png(
-            url=str(svg_path),
-            write_to=str(png_path),
-            output_width=800,
-        )
-        print(f"  Converted infographic: {png_path.name}")
-        return png_path
+        print("  [INFO] cairosvg not installed — skipping infographic.", file=sys.stderr)
     except Exception as e:
-        print(f"  [WARNING] SVG→PNG conversion failed: {e}", file=sys.stderr)
-        return None
+        print(f"  [WARNING] cairosvg conversion failed: {e}", file=sys.stderr)
+
+    print("  [WARNING] SVG conversion failed — tweets will post without image.", file=sys.stderr)
+    return None
 
 
 # ──────────────────────────────────────────────
