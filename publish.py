@@ -22,6 +22,7 @@ import argparse
 import json
 import os
 import re
+import subprocess
 import sys
 import time
 from datetime import datetime
@@ -74,6 +75,46 @@ def find_infographic_for(blog_path: Path) -> Path | None:
     date_prefix = blog_path.stem[:10]
     svg_path = BLOGS_DIR / f"{date_prefix}-infographic.svg"
     return svg_path if svg_path.exists() else None
+
+
+def find_cover_for(blog_path: Path) -> Path | None:
+    """Return the SVG cover image for the given blog, or None if not found."""
+    date_prefix = blog_path.stem[:10]
+    svg_path = BLOGS_DIR / f"{date_prefix}-cover.svg"
+    return svg_path if svg_path.exists() else None
+
+
+def commit_and_get_url(png_path: Path) -> str | None:
+    """Commit a PNG to GitHub and return its raw content URL."""
+    try:
+        subprocess.run(["git", "config", "user.email", "strategy-bot@users.noreply.github.com"], check=True, capture_output=True)
+        subprocess.run(["git", "config", "user.name", "Strategy Publisher Bot"], check=True, capture_output=True)
+        subprocess.run(["git", "add", str(png_path)], check=True, capture_output=True)
+
+        # Check if there's actually something staged
+        diff = subprocess.run(["git", "diff", "--staged", "--quiet"])
+        if diff.returncode != 0:
+            subprocess.run(["git", "commit", "-m", f"Add image: {png_path.name}"], check=True, capture_output=True)
+            subprocess.run(["git", "pull", "--rebase"], check=True, capture_output=True)
+            subprocess.run(["git", "push"], check=True, capture_output=True)
+            print(f"  Committed and pushed: {png_path.name}")
+        else:
+            print(f"  Already committed: {png_path.name}")
+
+        # Build raw GitHub URL
+        remote = subprocess.run(
+            ["git", "remote", "get-url", "origin"],
+            capture_output=True, text=True
+        ).stdout.strip()
+        # https://github.com/user/repo.git  →  user/repo
+        repo = remote.replace("https://github.com/", "").replace(".git", "")
+        rel = png_path.relative_to(BASE_DIR)
+        url = f"https://raw.githubusercontent.com/{repo}/main/{rel}"
+        print(f"  Cover URL: {url}")
+        return url
+    except Exception as e:
+        print(f"  [Warning] Could not commit cover PNG: {e}", file=sys.stderr)
+        return None
 
 
 def svg_to_png(svg_path: Path) -> Path | None:
@@ -143,6 +184,7 @@ def parse_blog(path: Path) -> dict:
         "summary": frontmatter.get("summary", ""),
         "content": content,
         "status":  frontmatter.get("status", "published"),
+        # cover_image_url added by main() after PNG conversion
     }
 
 
@@ -362,15 +404,29 @@ def main():
         except Exception:
             pass
 
-    # Find infographic SVG and convert to PNG
+    # Convert infographic SVG to PNG (for tweet attachment)
     svg_path = find_infographic_for(blog_path)
     png_path = svg_to_png(svg_path) if svg_path else None
     if svg_path and not png_path:
         print(f"  [INFO] No infographic PNG — tweets will post without image")
 
+    # Convert cover SVG to PNG, commit it, get URL (for blog hero image)
+    cover_url = None
+    cover_svg = find_cover_for(blog_path)
+    if cover_svg:
+        print(f"\n[Cover] Converting {cover_svg.name} to PNG...")
+        cover_png = svg_to_png(cover_svg)
+        if cover_png:
+            cover_url = commit_and_get_url(cover_png)
+    else:
+        print(f"  [INFO] No cover SVG found — blog will post without hero image")
+
     # Publish blog
     if not args.twitter_only:
         blog_data = parse_blog(blog_path)
+        if cover_url:
+            blog_data["cover_image_url"] = cover_url
+            print(f"  Cover image: {cover_url}")
         blog_result = publish_blog(blog_data, dry_run=args.dry_run)
 
     # Publish tweet thread

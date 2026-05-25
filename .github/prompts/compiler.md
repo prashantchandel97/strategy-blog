@@ -149,6 +149,20 @@ Then use replace_in_file on the blog file to swap `[SVG_PLACEHOLDER]` with:
 </div>
 ```
 
+**Also create a cover image** at `blogs/YYYY-MM-DD-cover.svg` — this is the hero image shown in the blog listing and social sharing (1200×630, OG image dimensions).
+
+Cover image spec:
+- Canvas: `viewBox="0 0 1200 630"`, background `fill="#0F172A"` (dark navy)
+- Top accent bar: `x="0" y="0" width="1200" height="5" fill="#2563EB"`
+- Subtle texture: two large translucent circles, `fill="#FFFFFF" opacity="0.03"`, offset to top-right and bottom-left corners (r=300 each), for visual depth
+- Left content zone (x=80 to x=860), right zone decorative
+- Blog label: `x="80" y="90" font-size="13" font-weight="600" fill="#2563EB" letter-spacing="3"` — text: `STRATEGY ANALYSIS`
+- Title: starting at y=160, `font-size="64" font-weight="800" fill="#FFFFFF"` — wrap long titles to 2 lines at ~20 chars per line, second line at y=240
+- Divider line: `x1="80" y1="290" x2="120" y2="290" stroke="#2563EB" stroke-width="3"`
+- Summary (one punchy sentence from the blog summary field): `x="80" y="330" font-size="22" fill="#94A3B8"` — wrap to 2 lines if needed, 55 chars per line
+- Bottom brand strip: `x="0" y="580" width="1200" height="50" fill="#0A1628"` with `prashant-chandel.org/blog` at `x="80" y="612" font-size="16" fill="#475569"` and the date at `x="1120" y="612" text-anchor="end" font-size="16" fill="#475569"`
+- Right decorative element: a large bracket or geometric shape in `fill="none" stroke="#1E3A5F" stroke-width="1.5"` — e.g. a partial circle arc or intersecting lines, subtle and abstract
+
 ### Stage D — Append sources + update memory + mark research complete
 
 **1. Append sources to the blog:**
