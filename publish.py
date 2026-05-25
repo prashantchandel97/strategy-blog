@@ -425,7 +425,7 @@ def main():
     if not args.twitter_only:
         blog_data = parse_blog(blog_path)
         if cover_url:
-            blog_data["cover_image_url"] = cover_url
+            blog_data["coverImage"] = cover_url
             print(f"  Cover image: {cover_url}")
         blog_result = publish_blog(blog_data, dry_run=args.dry_run)
 
