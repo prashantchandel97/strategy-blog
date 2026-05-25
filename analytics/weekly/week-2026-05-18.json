@@ -1,0 +1,17 @@
+{
+  "blog_file": "2026-05-18-the-invisible-tax.md",
+  "blog_date": "2026-05-18",
+  "tracked_on": "2026-05-25",
+  "follower_count": 50,
+  "follower_delta": 0,
+  "note": "Tweet metrics (impressions, likes, retweets) require Twitter API Basic tier. Check analytics.twitter.com and paste manually if needed.",
+  "tweet_metrics": {
+    "impressions": null,
+    "likes": null,
+    "retweets": null,
+    "replies": null,
+    "bookmarks": null,
+    "completion_rate": null,
+    "engagement_score": null
+  }
+}
