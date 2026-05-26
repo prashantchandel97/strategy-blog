@@ -75,19 +75,11 @@ jobs:
           git diff --staged --quiet && echo "Nothing to commit" || \
             git commit -m "Published: $(date +'%Y-%m-%d') blog + tweets" && git pull --rebase && git push
 
-      # ── Step 3: Create Beehiiv newsletter draft ───────────────────────────────
-
-      - name: Create Beehiiv newsletter draft
-        env:
-          BEEHIIV_API_KEY: ${{ secrets.BEEHIIV_API_KEY }}
-          BEEHIIV_PUBLICATION_ID: ${{ secrets.BEEHIIV_PUBLICATION_ID }}
-        run: python3 beehiiv_publisher.py
-        continue-on-error: true   # newsletter failure must not block the rest
-
-      - name: Commit updated publish log
-        run: |
-          git config user.email "strategy-bot@users.noreply.github.com"
-          git config user.name "Strategy Publisher Bot"
-          git add publish-log.json || true
-          git diff --staged --quiet && echo "Nothing to log" || \
-            git commit -m "Log: newsletter draft created $(date +'%b %d')" && git pull --rebase && git push
+      # ── Step 3: Beehiiv newsletter — PAUSED
+      # Uncomment when ready to enable:
+      # - name: Create Beehiiv newsletter draft
+      #   env:
+      #     BEEHIIV_API_KEY: ${{ secrets.BEEHIIV_API_KEY }}
+      #     BEEHIIV_PUBLICATION_ID: ${{ secrets.BEEHIIV_PUBLICATION_ID }}
+      #   run: python3 beehiiv_publisher.py
+      #   continue-on-error: true
