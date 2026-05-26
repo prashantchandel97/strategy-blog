@@ -39,22 +39,13 @@ jobs:
           TWITTER_ACCESS_TOKEN_SECRET=${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
           EOF
 
-      # ── Step 1: Generate audio FIRST so URL is ready for blog API call ──────
-
-      - name: Generate audio narration
-        env:
-          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python3 audio_generator.py
-        continue-on-error: true   # audio failure must not block publishing
-
-      - name: Commit audio cache
-        run: |
-          git config user.email "strategy-bot@users.noreply.github.com"
-          git config user.name "Strategy Publisher Bot"
-          git add audio-cache.json || true
-          git diff --staged --quiet && echo "No audio cache to commit" || \
-            git commit -m "Audio: generated for $(date +'%Y-%m-%d')" && git pull --rebase && git push
+      # ── Step 1: Audio narration — PAUSED (enable when ElevenLabs plan acquired)
+      # - name: Generate audio narration
+      #   env:
+      #     ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   run: python3 audio_generator.py
+      #   continue-on-error: true
 
       # ── Step 2: Publish blog + tweet thread + contrarian thread ──────────────
 
