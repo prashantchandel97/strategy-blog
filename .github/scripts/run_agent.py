@@ -329,9 +329,31 @@ def run_agent(agent_type: str) -> None:
             f"- **Today's day**: {date.today().strftime('%A')}\n"
         )
 
+    # For podcast-script: inject the blog file to convert (same logic as tweet-thread)
+    if agent_type == "podcast-script":
+        import re as _re
+        date_pat = _re.compile(r"^\d{4}-\d{2}-\d{2}-.+\.md$")
+        blogs_dir = BASE_DIR / "blogs"
+        candidates = [
+            f for f in blogs_dir.glob("*.md")
+            if date_pat.match(f.name)
+            and "tweet-thread" not in f.name
+            and "contrarian" not in f.name
+            and "infographic" not in f.name
+            and "podcast-script" not in f.name
+            and f.stat().st_size > 0
+        ]
+        if candidates:
+            latest_blog = max(candidates, key=lambda f: f.name)
+            blog_date   = latest_blog.name[:10]
+            date_context += (
+                f"- **Blog to convert**: blogs/{latest_blog.name}\n"
+                f"- **Podcast script file to write**: blogs/{blog_date}-podcast-script.md\n"
+            )
+
     system_prompt = system_prompt + date_context
 
-    if agent_type in ("compiler", "tweet-thread", "memory-compressor", "daily-poster", "brief-generator"):
+    if agent_type in ("compiler", "tweet-thread", "memory-compressor", "daily-poster", "brief-generator", "podcast-script"):
         model = MODEL_COMPILER   # Sonnet — quality matters for public-facing drafts
     elif agent_type == "summarizer":
         model = MODEL_SUMMARIZER
@@ -355,7 +377,7 @@ def run_agent(agent_type: str) -> None:
     # Compiler/tweet-thread read large files — need longer pauses to stay
     # under the 30k input-tokens-per-minute rate limit.
     # Summarizer reads the full research file too so gets the same treatment.
-    inter_turn_sleep = 65 if agent_type in ("compiler", "tweet-thread", "summarizer", "memory-compressor", "daily-poster", "brief-generator") else 8
+    inter_turn_sleep = 65 if agent_type in ("compiler", "tweet-thread", "summarizer", "memory-compressor", "daily-poster", "brief-generator", "podcast-script") else 8
 
     for turn in range(MAX_TURNS):
         print(f"\n[Turn {turn + 1}] Calling Claude API...")
@@ -443,7 +465,7 @@ if __name__ == "__main__":
         sys.exit(1)
 
     agent_type = sys.argv[1]
-    valid = {"researcher", "analyst", "compiler", "tweet-thread", "summarizer", "memory-compressor", "daily-poster", "brief-generator"}
+    valid = {"researcher", "analyst", "compiler", "tweet-thread", "summarizer", "memory-compressor", "daily-poster", "brief-generator", "podcast-script"}
     if agent_type not in valid:
         print(f"ERROR: Unknown agent type '{agent_type}'. Must be one of: {valid}", file=sys.stderr)
         sys.exit(1)

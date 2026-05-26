@@ -66,6 +66,21 @@ jobs:
           git diff --staged --quiet && echo "Nothing to commit" || \
             git commit -m "Published: $(date +'%Y-%m-%d') blog + tweets" && git pull --rebase && git push
 
+      # ── Step 3: Generate podcast script ──────────────────────────────────────
+
+      - name: Generate podcast script
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python3 .github/scripts/run_agent.py podcast-script
+
+      - name: Commit podcast script
+        run: |
+          git config user.email "strategy-bot@users.noreply.github.com"
+          git config user.name "Strategy Publisher Bot"
+          git add blogs/*-podcast-script.md || true
+          git diff --staged --quiet && echo "No script to commit" || \
+            git commit -m "Podcast script: $(date +'%Y-%m-%d')" && git pull --rebase && git push
+
       # ── Step 3: Beehiiv newsletter — PAUSED
       # Uncomment when ready to enable:
       # - name: Create Beehiiv newsletter draft
