@@ -4,8 +4,6 @@ Running list of topics the agents can draw from. Agents should also discover
 their own topics via web search for current events.
 
 ## High Priority (explore soon)
-- Why vertical SaaS is eating horizontal SaaS (and what breaks this trend)
-- India's UPI and what it means for global payments infrastructure
 - The second-order effects of AI on media companies and content moats
 - The AI IPO valuation problem: what comparable set does the market actually use for Anthropic and OpenAI S-1 pricing?
 
@@ -17,3 +15,7 @@ their own topics via web search for current events.
 - Custom silicon as a moat: hyperscalers' vertical integration advantage (covered: 2026-05-11, "The Real AI Infrastructure Moat Isn't Custom Silicon—It's Owning The Whole Stack")
 - The inference startup graveyard: Groq, SambaNova, Cerebras consolidation and what it means for AI infrastructure M&A (covered: 2026-05-11, "The Real AI Infrastructure Moat Isn't Custom Silicon—It's Owning The Whole Stack")
 - AI infrastructure cost visibility and market bifurcation (covered: 2026-05-18, "The Invisible Tax: Why AI's Winners Hide the Bill" — SaaS pricing under AI pressure, power infrastructure as bottleneck, on-device vs. cloud inference split, bundling vs. transparent pricing as market organizer)
+- Why vertical SaaS is eating horizontal SaaS (and what breaks this trend) (covered: 2026-05-25, "Governance Is the New Moat" — SaaS consolidation is stacking into mega-platforms + verticals + custom, not bifurcating; bundling power replaces feature differentiation)
+- India's UPI and what it means for global payments infrastructure (covered: 2026-05-25, "Governance Is the New Moat" — Razorpay profitability and CLOU regulatory constraints; compliance costs consolidate advantages to capital-rich players)
+- Market structure, regulation, and antitrust in tech platforms (covered: 2026-05-25, "Governance Is the New Moat" — Arm and Microsoft antitrust investigations; fair competition requirements eliminate downstream lock-in moats)
+- Enterprise AI adoption challenges and ROI measurement (covered: 2026-05-25, "Governance Is the New Moat" — 95% failure rate from scoping problems, not technology; measurement discipline separates winners)
