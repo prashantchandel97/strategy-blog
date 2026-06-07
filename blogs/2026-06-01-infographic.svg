@@ -1,0 +1,85 @@
+<svg viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg" style="font-family: Inter, system-ui, -apple-system, sans-serif; width:100%; height:auto; display:block;">
+  <!-- Background -->
+  <rect x="0" y="0" width="800" height="480" fill="#F8FAFC"/>
+  
+  <!-- Header band -->
+  <rect x="0" y="0" width="800" height="3" fill="#2563EB"/>
+  <rect x="0" y="3" width="800" height="52" fill="#0F172A"/>
+  <text x="400" y="38" text-anchor="middle" font-size="19" font-weight="700" fill="#FFFFFF">Token Consumption vs. Cost Decline: The Widening Gap</text>
+  
+  <!-- Left card: Per-token cost trajectory -->
+  <rect x="42" y="93" width="3" height="340" fill="#0000000D"/>
+  <rect x="39" y="90" width="3" height="340" fill="#0000000D"/>
+  <rect x="36" y="87" width="350" height="340" fill="#FFFFFF" rx="8" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="36" y="87" width="350" height="3" fill="#059669"/>
+  
+  <text x="211" y="115" text-anchor="middle" font-size="13" font-weight="600" fill="#1E3A5F">Per-Token Cost Declining</text>
+  
+  <!-- Big metric callout -->
+  <text x="211" y="165" text-anchor="middle" font-size="30" font-weight="700" fill="#059669">90%</text>
+  <text x="211" y="180" text-anchor="middle" font-size="11" fill="#94A3B8">cost reduction since GPT-4 launch</text>
+  
+  <!-- Cost trend bars -->
+  <text x="50" y="215" font-size="11" fill="#475569">GPT-4 (2023)</text>
+  <rect x="155" y="205" width="220" height="18" rx="4" fill="#DC2626" opacity="0.3"/>
+  <text x="368" y="218" font-size="12" font-weight="600" fill="#0F172A" text-anchor="end">$0.06/1K</text>
+  
+  <text x="50" y="250" font-size="11" fill="#475569">GPT-4 Turbo (2024)</text>
+  <rect x="155" y="240" width="110" height="18" rx="4" fill="#DC2626" opacity="0.3"/>
+  <text x="258" y="253" font-size="12" font-weight="600" fill="#0F172A" text-anchor="end">$0.01/1K</text>
+  
+  <text x="50" y="285" font-size="11" fill="#475569">Claude 3 (2025)</text>
+  <rect x="155" y="275" width="88" height="18" rx="4" fill="#DC2626" opacity="0.3"/>
+  <text x="236" y="288" font-size="12" font-weight="600" fill="#0F172A" text-anchor="end">$0.008/1K</text>
+  
+  <text x="50" y="320" font-size="11" fill="#475569">On-device (2026)</text>
+  <rect x="155" y="310" width="22" height="18" rx="4" fill="#059669"/>
+  <text x="170" y="323" font-size="12" font-weight="600" fill="#0F172A" text-anchor="end">~$0</text>
+  
+  <!-- Bottom annotation -->
+  <text x="50" y="360" font-size="11" font-weight="500" fill="#0F172A">✓ Falling fast</text>
+  <text x="50" y="378" font-size="10" fill="#94A3B8">Economies of scale + competition</text>
+  <text x="50" y="393" font-size="10" fill="#94A3B8">driving prices down consistently</text>
+  
+  <!-- Right card: Token consumption growth -->
+  <rect x="417" y="93" width="3" height="340" fill="#0000000D"/>
+  <rect x="414" y="90" width="3" height="340" fill="#0000000D"/>
+  <rect x="411" y="87" width="350" height="340" fill="#FFFFFF" rx="8" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="411" y="87" width="350" height="3" fill="#DC2626"/>
+  
+  <text x="586" y="115" text-anchor="middle" font-size="13" font-weight="600" fill="#1E3A5F">Token Consumption Exploding</text>
+  
+  <!-- Big metric callout -->
+  <text x="586" y="165" text-anchor="middle" font-size="30" font-weight="700" fill="#DC2626">24x</text>
+  <text x="586" y="180" text-anchor="middle" font-size="11" fill="#94A3B8">projected growth by 2030 (Goldman Sachs)</text>
+  
+  <!-- Consumption comparison -->
+  <text x="425" y="215" font-size="11" fill="#475569">Simple query</text>
+  <rect x="530" y="205" width="30" height="18" rx="4" fill="#2563EB" opacity="0.3"/>
+  <text x="553" y="218" font-size="12" font-weight="600" fill="#0F172A" text-anchor="end">50</text>
+  <text x="568" y="218" font-size="10" fill="#94A3B8">tokens</text>
+  
+  <text x="425" y="250" font-size="11" fill="#475569">AI coding task</text>
+  <rect x="530" y="240" width="180" height="18" rx="4" fill="#DC2626" opacity="0.3"/>
+  <text x="703" y="253" font-size="12" font-weight="600" fill="#0F172A" text-anchor="end">2K-10K</text>
+  <text x="730" y="253" font-size="10" fill="#94A3B8">tokens</text>
+  
+  <text x="425" y="285" font-size="11" fill="#475569">Autonomous agent</text>
+  <rect x="530" y="275" width="210" height="18" rx="4" fill="#DC2626"/>
+  <text x="733" y="288" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="end">5K-25K</text>
+  
+  <!-- Multiplier callout -->
+  <text x="425" y="320" font-size="11" font-weight="500" fill="#DC2626">✗ Consumption multiplier:</text>
+  <text x="425" y="338" font-size="11" font-weight="700" fill="#DC2626">3.2x to 50x per task</text>
+  
+  <!-- Bottom annotation -->
+  <text x="425" y="370" font-size="10" fill="#94A3B8">Microsoft cancelled Claude Code after</text>
+  <text x="425" y="385" font-size="10" fill="#94A3B8">6 months: "cost of compute was far</text>
+  <text x="425" y="400" font-size="10" fill="#94A3B8">beyond the cost of the employees"</text>
+  
+  <!-- Divider line between cards -->
+  <line x1="400" y1="100" x2="400" y2="420" stroke="#E2E8F0" stroke-width="2" stroke-dasharray="4 4"/>
+  
+  <!-- Source -->
+  <text x="790" y="472" text-anchor="end" font-size="10" fill="#94A3B8">prashant-chandel.org/blog</text>
+</svg>

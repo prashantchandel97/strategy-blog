@@ -1,0 +1,36 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" style="font-family: Inter, system-ui, -apple-system, sans-serif; width:100%; height:auto; display:block;">
+  <!-- Background -->
+  <rect x="0" y="0" width="1200" height="630" fill="#0F172A"/>
+  
+  <!-- Accent bar -->
+  <rect x="0" y="0" width="1200" height="5" fill="#2563EB"/>
+  
+  <!-- Decorative circles for texture -->
+  <circle cx="950" cy="120" r="300" fill="#FFFFFF" opacity="0.03"/>
+  <circle cx="250" cy="510" r="300" fill="#FFFFFF" opacity="0.03"/>
+  
+  <!-- Content zone -->
+  <text x="80" y="90" font-size="13" font-weight="600" fill="#2563EB" letter-spacing="3">STRATEGY ANALYSIS</text>
+  
+  <!-- Title -->
+  <text x="80" y="180" font-size="64" font-weight="800" fill="#FFFFFF">The Token Tax:</text>
+  <text x="80" y="260" font-size="64" font-weight="800" fill="#FFFFFF">Why AI's Cost Problem</text>
+  <text x="80" y="340" font-size="64" font-weight="800" fill="#FFFFFF">Just Got Structural</text>
+  
+  <!-- Divider -->
+  <line x1="80" y1="370" x2="120" y2="370" stroke="#2563EB" stroke-width="3"/>
+  
+  <!-- Summary -->
+  <text x="80" y="420" font-size="22" fill="#94A3B8">Token consumption is growing 10x faster than</text>
+  <text x="80" y="455" font-size="22" fill="#94A3B8">per-token cost declines—and it's breaking the ROI.</text>
+  
+  <!-- Decorative element - abstract bracket -->
+  <path d="M 900 200 L 950 200 L 950 430 L 900 430" fill="none" stroke="#1E3A5F" stroke-width="1.5"/>
+  <path d="M 960 200 L 1010 200 L 1010 430 L 960 430" fill="none" stroke="#1E3A5F" stroke-width="1.5"/>
+  <line x1="950" y1="315" x2="960" y2="315" stroke="#1E3A5F" stroke-width="1.5"/>
+  
+  <!-- Bottom brand strip -->
+  <rect x="0" y="580" width="1200" height="50" fill="#0A1628"/>
+  <text x="80" y="612" font-size="16" fill="#475569">prashant-chandel.org/blog</text>
+  <text x="1120" y="612" text-anchor="end" font-size="16" fill="#475569">June 1, 2026</text>
+</svg>
