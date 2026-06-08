@@ -1,6 +1,6 @@
 # Performance Insights
 
-_Updated: 2026-06-07. Based on 2 weeks of data._
+_Updated: 2026-06-08. Based on 2 weeks of data._
 
 **Note on metrics:** Tweet-level data (impressions, likes, retweets) requires Twitter API Basic tier and is not automatically tracked. Follower count is tracked weekly.
 
@@ -53,15 +53,21 @@ _Pending data. Manual tracking required._
 ## Recommendations for Agents
 
 ### For the Researcher
-- **Priority topics**: Continue AI infrastructure consolidation thread (2 posts published, strong conceptual foundation). Expand governance-as-moat angle across more markets (1 post published, cross-sector pattern emerging).
-- **No follower signal yet**: Default to config.yaml priorities. Once engagement data arrives, look for whether technical deep-dives (chip economics) or cross-market patterns (governance) generate stronger audience response.
-- **Content breadth expanding well**: From vertical integration (technical) to cost bundling (economic) to governance (operational). This range tests what resonates.
+
+**Priority topics until engagement data arrives**: Continue the three running narrative threads established in first month. AI infrastructure consolidation (2 posts) shows strong conceptual foundation. Governance-as-moat pattern (1 post) demonstrates cross-sector applicability. Cost structure as market determinant (2 posts) provides analytical lens applicable to multiple verticals.
+
+**Hypothesis to test when metrics arrive**: Whether technical depth (chip economics, margin analysis) or structural patterns (bundling dynamics, regulatory moats) generate stronger audience engagement. Current content split tests both approaches.
+
+**Coverage gaps from config**: India tech ecosystem touched lightly through fintech regulation but ecosystem dynamics unexplored. Media and creator economy, climate tech, supply chain strategy remain untouched. Three posts in one month establishes credibility baseline before expanding topic range.
 
 ### For the Tweet Thread Writer
-- **Hook approach (no data yet)**: Test counterintuitive framing (chip startups are dead), data-led openings (95% failure rate), and structural contrasts (bundlers vs. transparent pricers). Track which drives engagement once metrics available.
-- **Thread length (no data yet)**: Default to 5-7 tweets for deep analysis posts. Consider shorter threads (3-4 tweets) for single-concept arguments once engagement patterns emerge.
-- **Tracking urgency**: Three blog posts published, corresponding threads created. Manual posting and tracking needed to build performance baseline.
+
+**Default strategy absent data**: Test three hook types across next threads: counterintuitive claims (chip startups are dead), data-led openings (95% failure rate), structural contrasts (bundlers vs. transparent pricers). 5-7 tweet length for deep analysis posts maintains coherence without losing mobile readers.
+
+**Urgency**: Three blog posts published with corresponding threads created. Manual posting and engagement tracking needed to build performance baseline. Without metrics, can't optimize hook style, thread length, or content emphasis.
+
+**Once data arrives, prioritize**: Which arguments drive saves (bookmark-worthy insights), which generate replies (opinion-splitting takes), which get retweeted (shareable frameworks). Adjust content strategy based on actual audience behavior, not assumptions.
 
 ---
 
-_Last updated: 2026-06-07_
+_Last updated: 2026-06-08_
