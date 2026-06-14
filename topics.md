@@ -9,6 +9,11 @@ their own topics via web search for current events.
 
 ## Explored (move topics here after a week covers them)
 <!-- Agents: move topics here after they've been covered in a weekly blog -->
+- SaaS pricing model breakdown and bifurcation (covered: 2026-06-08, "The Measurement Moat" — per-seat pricing broken by AI automation; measurable vs. unmeasurable categories; outcome-based pricing; measurement moats last 3-7 years vs. infrastructure moats at 12-18 months)
+- AI coding agents and routing infrastructure (covered: 2026-06-08, "The Measurement Moat" — Cognition's model-agnostic routing moat compressed to 18-24 months by OpenAI's distribution advantage; switching costs around measurement baselines)
+- Pharma competitive dynamics and measurement moats (covered: 2026-06-08, "The Measurement Moat" — Eli Lilly vs. Novo Nordisk GLP-1 market; measurement (22.5% vs. 15-17% weight loss) beats brand, price, first-mover advantage)
+- India fintech regulatory structure and vertical integration (covered: 2026-06-08, "The Measurement Moat" — Cashfree profitability; UPI open infrastructure forcing measurement moats, not lock-in; regulatory compliance as moat)
+- Memory bandwidth bottleneck in AI infrastructure (covered: 2026-06-08, "The Measurement Moat" — Rambus HBM controller IP; 80% margins, 3x operating income growth; Marvell's 70% more efficient competing design; moat window = 15 months)
 - How Nvidia built the most valuable company through developer ecosystem lock-in (covered: 2026-04-04, "In AI, the Margin Is the Moat")
 - AI/ML industry moves and second-order effects (covered: 2026-04-04, "In AI, the Margin Is the Moat" — margin war, model lab economics, IPO race, inference consolidation)
 - The "app store" moment for AI agents — who captures the distribution? (covered: 2026-04-19, "enterprise-ai-os")

@@ -1,0 +1,92 @@
+<svg viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg" style="font-family: Inter, system-ui, -apple-system, sans-serif; width:100%; height:auto; display:block;">
+  <!-- Background -->
+  <rect x="0" y="0" width="800" height="480" fill="#F8FAFC"/>
+  
+  <!-- Top accent stripe -->
+  <rect x="0" y="0" width="800" height="3" fill="#2563EB"/>
+  
+  <!-- Header band -->
+  <rect x="0" y="0" width="800" height="52" fill="#0F172A"/>
+  <text x="400" y="33" text-anchor="middle" font-size="19" font-weight="700" fill="#FFFFFF">The Hierarchy of Moat Durability</text>
+  
+  <!-- Card shadows (offset duplicates) -->
+  <rect x="43" y="103" width="220" height="340" rx="8" fill="#0000000D"/>
+  <rect x="293" y="103" width="220" height="340" rx="8" fill="#0000000D"/>
+  <rect x="543" y="103" width="220" height="340" rx="8" fill="#0000000D"/>
+  
+  <!-- Three comparison cards -->
+  <!-- Card 1: Infrastructure Moats -->
+  <rect x="40" y="100" width="220" height="340" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="40" y="100" width="220" height="3" rx="8" fill="#DC2626"/>
+  
+  <text x="150" y="130" text-anchor="middle" font-size="13" font-weight="600" fill="#1E3A5F">Infrastructure</text>
+  
+  <text x="150" y="170" text-anchor="middle" font-size="30" font-weight="700" fill="#DC2626">12-18</text>
+  <text x="150" y="188" text-anchor="middle" font-size="11" fill="#94A3B8">months lifespan</text>
+  
+  <text x="50" y="220" font-size="12" font-weight="600" fill="#0F172A">Example: Rambus</text>
+  <text x="50" y="240" font-size="12" fill="#475569">▸ Memory interface IP</text>
+  <text x="50" y="258" font-size="12" fill="#475569">▸ 80% gross margins</text>
+  <text x="50" y="276" font-size="12" fill="#475569">▸ 3x operating income</text>
+  <text x="60" y="294" font-size="11" fill="#475569">in 2 years</text>
+  
+  <text x="50" y="320" font-size="12" font-weight="600" fill="#0F172A">Why it breaks:</text>
+  <text x="50" y="340" font-size="11" fill="#475569">Marvell ships 70%</text>
+  <text x="50" y="355" font-size="11" fill="#475569">more efficient design.</text>
+  <text x="50" y="370" font-size="11" fill="#475569">HBM supply normalizes.</text>
+  <text x="50" y="385" font-size="11" fill="#475569">Hyperscalers switch</text>
+  <text x="50" y="400" font-size="11" fill="#475569">in 12-18mo cycles.</text>
+  
+  <text x="150" y="425" text-anchor="middle" font-size="10" font-weight="600" fill="#DC2626">SHORTEST MOAT</text>
+  
+  <!-- Card 2: Measurement Moats -->
+  <rect x="290" y="100" width="220" height="340" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="290" y="100" width="220" height="3" rx="8" fill="#F59E0B"/>
+  
+  <text x="400" y="130" text-anchor="middle" font-size="13" font-weight="600" fill="#1E3A5F">Measurement</text>
+  
+  <text x="400" y="170" text-anchor="middle" font-size="30" font-weight="700" fill="#F59E0B">3-7</text>
+  <text x="400" y="188" text-anchor="middle" font-size="11" fill="#94A3B8">years lifespan</text>
+  
+  <text x="300" y="220" font-size="12" font-weight="600" fill="#0F172A">Example: Eli Lilly</text>
+  <text x="300" y="240" font-size="12" fill="#475569">▸ 22.5% weight loss</text>
+  <text x="300" y="258" font-size="12" fill="#475569">▸ vs. 15-17% (Novo)</text>
+  <text x="300" y="276" font-size="12" fill="#475569">▸ 51% market share</text>
+  <text x="310" y="294" font-size="11" fill="#475569">despite 70% price cut</text>
+  
+  <text x="300" y="320" font-size="12" font-weight="600" fill="#0F172A">Why it breaks:</text>
+  <text x="300" y="340" font-size="11" fill="#475569">Competitors publish</text>
+  <text x="300" y="355" font-size="11" fill="#475569">equivalent efficacy data.</text>
+  <text x="300" y="370" font-size="11" fill="#475569">Generics approved</text>
+  <text x="300" y="385" font-size="11" fill="#475569">2028-2030. Regulation</text>
+  <text x="300" y="400" font-size="11" fill="#475569">forces data sharing.</text>
+  
+  <text x="400" y="425" text-anchor="middle" font-size="10" font-weight="600" fill="#F59E0B">MEDIUM MOAT</text>
+  
+  <!-- Card 3: Distribution + Measurement -->
+  <rect x="540" y="100" width="220" height="340" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="540" y="100" width="220" height="3" rx="8" fill="#059669"/>
+  
+  <text x="650" y="130" text-anchor="middle" font-size="13" font-weight="600" fill="#1E3A5F">Distribution</text>
+  
+  <text x="650" y="170" text-anchor="middle" font-size="30" font-weight="700" fill="#059669">∞*</text>
+  <text x="650" y="188" text-anchor="middle" font-size="11" fill="#94A3B8">*with measurement parity</text>
+  
+  <text x="550" y="220" font-size="12" font-weight="600" fill="#0F172A">Example: OpenAI</text>
+  <text x="550" y="240" font-size="12" fill="#475569">▸ 3M Codex users</text>
+  <text x="550" y="258" font-size="12" fill="#475569">▸ vs. 80K (Cognition)</text>
+  <text x="550" y="276" font-size="12" fill="#475569">▸ 40x data collection</text>
+  <text x="560" y="294" font-size="11" fill="#475569">advantage</text>
+  
+  <text x="550" y="320" font-size="12" font-weight="600" fill="#0F172A">Why it wins:</text>
+  <text x="550" y="340" font-size="11" fill="#475569">Measurement parity</text>
+  <text x="550" y="355" font-size="11" fill="#475569">in 18-24 months (faster</text>
+  <text x="550" y="370" font-size="11" fill="#475569">data = faster proof).</text>
+  <text x="550" y="385" font-size="11" fill="#475569">Then distribution beats</text>
+  <text x="550" y="400" font-size="11" fill="#475569">switching costs.</text>
+  
+  <text x="650" y="425" text-anchor="middle" font-size="10" font-weight="600" fill="#059669">LONGEST MOAT</text>
+  
+  <!-- Source -->
+  <text x="790" y="472" text-anchor="end" font-size="10" fill="#94A3B8">prashant-chandel.org/blog</text>
+</svg>

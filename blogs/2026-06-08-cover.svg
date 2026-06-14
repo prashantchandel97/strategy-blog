@@ -1,0 +1,35 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" style="font-family: Inter, system-ui, -apple-system, sans-serif; width:100%; height:auto; display:block;">
+  <!-- Background -->
+  <rect x="0" y="0" width="1200" height="630" fill="#0F172A"/>
+  
+  <!-- Top accent bar -->
+  <rect x="0" y="0" width="1200" height="5" fill="#2563EB"/>
+  
+  <!-- Decorative circles for depth -->
+  <circle cx="950" cy="150" r="300" fill="#FFFFFF" opacity="0.03"/>
+  <circle cx="250" cy="480" r="300" fill="#FFFFFF" opacity="0.03"/>
+  
+  <!-- Content -->
+  <text x="80" y="90" font-size="13" font-weight="600" fill="#2563EB" letter-spacing="3">STRATEGY ANALYSIS</text>
+  
+  <!-- Title (wrapped to 2 lines) -->
+  <text x="80" y="160" font-size="64" font-weight="800" fill="#FFFFFF">The Measurement</text>
+  <text x="80" y="240" font-size="64" font-weight="800" fill="#FFFFFF">Moat</text>
+  
+  <!-- Divider line -->
+  <line x1="80" y1="290" x2="120" y2="290" stroke="#2563EB" stroke-width="3"/>
+  
+  <!-- Summary -->
+  <text x="80" y="330" font-size="22" fill="#94A3B8">Every competitive moat is temporary—but</text>
+  <text x="80" y="360" font-size="22" fill="#94A3B8">they break on different schedules.</text>
+  
+  <!-- Decorative geometric element (right side) -->
+  <path d="M 900 200 Q 1000 250 900 300" stroke="#1E3A5F" stroke-width="1.5" fill="none"/>
+  <path d="M 920 220 L 1020 220 L 1020 280 L 920 280" stroke="#1E3A5F" stroke-width="1.5" fill="none"/>
+  <circle cx="960" cy="250" r="40" stroke="#1E3A5F" stroke-width="1.5" fill="none"/>
+  
+  <!-- Bottom brand strip -->
+  <rect x="0" y="580" width="1200" height="50" fill="#0A1628"/>
+  <text x="80" y="612" font-size="16" fill="#475569">prashant-chandel.org/blog</text>
+  <text x="1120" y="612" text-anchor="end" font-size="16" fill="#475569">2026-06-08</text>
+</svg>

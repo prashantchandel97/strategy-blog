@@ -1,0 +1,44 @@
+Blog Compilation Summary — Week of 2026-06-08
+===============================================
+
+PUBLISHED: blogs/2026-06-08-measurement-moats.md
+Title: "The Measurement Moat: Why Some SaaS Companies Survive 3-7 Years and Others Die in 18 Months"
+Word count: ~3,400 words
+Topic: SaaS & Enterprise Software
+
+CORE THESIS:
+Every competitive moat is temporary, but they break on different schedules. Infrastructure moats (memory interfaces, routing layers) last 12-18 months. Measurement moats—when companies can prove superior customer outcomes with data—last 3-7 years. The SaaS market bifurcates: companies in measurable categories (support quality, credit risk, drug efficacy) survive with premium pricing; unmeasurable categories (productivity, collaboration) commoditize within 18-24 months.
+
+STRUCTURE:
+- Hook: Atlassian's revenue grew 21% while seat count fell; Eli Lilly captured 51% of GLP-1 market despite competitor's 70% price cut
+- Arc: Traces five different moats across SaaS, infrastructure, pharma, fintech—all temporary, all breaking on different timelines
+- Evidence: Zendesk (outcome-based pricing working), Cognition (switching costs stickier than expected), Rambus (infrastructure moat compressing to 15 months), Eli Lilly (measurement beats price/brand), Cashfree (regulatory structure forces measurement)
+- Conclusion: Measurement moats are most durable; next evolution is outcome guarantees (vendor liable if results not delivered)
+
+ASSETS CREATED:
+✅ Main blog post: blogs/2026-06-08-measurement-moats.md
+✅ Infographic (McKinsey-quality side-by-side comparison): blogs/2026-06-08-infographic.svg
+✅ Cover image (OG 1200×630): blogs/2026-06-08-cover.svg
+
+MEMORY UPDATED:
+✅ Editorial log entry added to memory/editorial-memory.md
+✅ Scorecard updated with 10 companies: Atlassian, Cognition, Rambus, Eli Lilly, Novo Nordisk, Cashfree, Zendesk, Snowflake, Datadog, plus Microsoft/Google/Salesforce context
+✅ Topics.md updated: 5 covered topics moved to Explored section
+✅ Research file marked complete
+
+FRAMEWORKS INTRODUCED:
+- Hierarchy of moat durability (infrastructure < measurement < distribution)
+- Measurable vs. unmeasurable SaaS category bifurcation
+- Outcome guarantees as next-generation moat
+
+COMPANIES COVERED:
+Primary: Atlassian, Zendesk, Cognition, Rambus, Eli Lilly, Novo Nordisk, Cashfree
+Supporting: OpenAI, Marvell, Slack, Snowflake, Datadog, Salesforce, ServiceNow, PhonePe, Google Pay, Razorpay
+
+NEXT WEEK'S OPEN QUESTIONS:
+- Which specific SaaS categories have genuinely measurable outcomes?
+- Can ServiceNow's multi-function outcome guarantee strategy work at scale?
+- Does Cognition's pivot to "Agent Command Center" extend their moat or does OpenAI's 40x distribution compress it?
+- When does measurement become an industry-standard metric (ceasing to be competitive advantage)?
+
+PUBLICATION STATUS: ✅ READY
