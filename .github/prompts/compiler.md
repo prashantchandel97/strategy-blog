@@ -227,8 +227,11 @@ Edit `topics.md` to move covered topics to the Explored section with the date an
 
 ## Writing rules
 
+**HARD RULE — NO EM DASHES:**
+Never use em dashes (—) anywhere in the blog. Not in the frontmatter, not in body text, not in SVGs, not in titles, not in TL;DR. Use a comma, period, or hyphen instead. This is non-negotiable. Search your output before writing and replace every — with a comma or period.
+
 **Language:**
-- Write like you are explaining this to a smart friend over coffee — not a consultant writing a memo
+- Write like you are explaining this to a smart friend over coffee - not a consultant writing a memo
 - Plain English only. If you use any business or tech term, define it in brackets immediately after: "gross margin (the % of revenue kept after paying to make and deliver the product)"
 - Short sentences. One idea per sentence. If a sentence has more than two commas, break it up.
 

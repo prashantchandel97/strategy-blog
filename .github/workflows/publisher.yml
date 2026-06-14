@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: '0 17 * * 0'   # 12 PM CDT (UTC-5) Sunday
   workflow_dispatch:
+    inputs:
+      blog_file:
+        description: 'Specific blog file to publish (e.g. blogs/2026-05-25-governance-is-the-new-moat.md). Leave empty to publish latest.'
+        required: false
+        default: ''
 
 jobs:
   publish:
@@ -56,7 +61,12 @@ jobs:
           TWITTER_CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_SECRET }}
           TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
           TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
-        run: python3 publish.py
+        run: |
+          if [ -n "${{ github.event.inputs.blog_file }}" ]; then
+            python3 publish.py --blog-file "${{ github.event.inputs.blog_file }}"
+          else
+            python3 publish.py
+          fi
 
       - name: Commit cover PNGs and publish log
         run: |
