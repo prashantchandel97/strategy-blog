@@ -26,7 +26,7 @@ jobs:
         run: sudo apt-get install -y libcairo2-dev libffi-dev librsvg2-bin
 
       - name: Install dependencies
-        run: pip install requests tweepy pyyaml python-dotenv cairosvg markdown
+        run: pip install requests tweepy pyyaml python-dotenv cairosvg markdown anthropic
 
       - name: Create .env from secrets
         run: |
@@ -69,6 +69,7 @@ jobs:
       # ── Step 3: Generate podcast script ──────────────────────────────────────
 
       - name: Generate podcast script
+        continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python3 .github/scripts/run_agent.py podcast-script
