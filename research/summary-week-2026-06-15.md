@@ -1,0 +1,35 @@
+# Week Summary — 2026-06-15 (Updated Monday)
+_Compiler: read this file, NOT the full research file._
+
+## Core Thesis
+India's fintech market is bifurcating into two paths: measurement-first lending NBFCs (Kissht, Aye Finance, Oxyzo) going profitable and public with defensible unit economics, and distribution-first payments apps (Google Pay, Paytm, PhonePe) fighting for merchant lock-in under regulatory caps—but the lending moat is regulatory arbitrage, not durable. Once the RBI opens lending to diversified entrants (Google, Paytm) after December 2026, incumbent NBFCs face margin compression. Kissht's IPO timing was perfect, timed before the door opened; late entrants will find moat gone.
+
+## The Key Tension
+The Researcher frames measurement moats (proprietary underwriting on unscored borrowers) as defensible competitive advantages because incumbent lenders have built them into profitable unit economics. The Analyst argues the moat is really a compliance layer, and compliance advantage is time-limited: once the RBI opens lending eligibility to tech giants with superior distribution and capital, the measurement advantage becomes replicable and non-defensible. The unresolved question: does the RBI keep lending separate from payments (protecting Kissht's margins through 2028+), or does it open the door faster, compressing NBFC profitability within 12-24 months?
+
+## Key Facts & Data Points
+- **Kissht IPO (April-May 2026)**: ₹925 crore raise; ₹281 crore net profit in FY26 on ₹2,100+ crore revenue (13.4% net margin); went public profitable by deliberately constraining loan disbursement—opposite of typical fintech playbook. — https://inc42.com/features/from-revenue-dip-to-%E2%82%B9850-cr-ipo-how-kissht-turned-it-around/
+- **Oxyzo Financial (SME lending)**: 24% revenue growth and 25.2% net margin (₹375.5 crore PAT on ₹1,488.8 crore revenue in FY26); 0.74% GNPA portfolio quality. — https://m.economictimes.com/tech/technology/oxyzo-financial-services-fy26-net-profit-rises-11-to-rs-375-crore-on-23-revenue-jump/amp_articleshow/131383349.cms
+- **India fintech funding surge (June 1-5, 2026)**: ₹187.4 million across 21 deals, 260% jump from prior week (₹52 million); majority flowing to lending and compliance infrastructure, not consumer apps. — https://techstory.in/weekly-startup-funding-news-indian-startup-funding-rebounds-260-in-first-week-of-june-touches-187-mn/
+- **UPI volume cap enforcement**: NPCI imposed 30% volume cap on any single UPI provider by December 2026, killing bundling power for Paytm, Google Pay, PhonePe and forcing secondary revenue diversification. — https://www.economictimes.indiatimes.com/tech/technology/npci-extends-upi-volume-cap-timeline-by-2-more-years/articleshow/116829131.cms
+- **Baseline measurement moat**: 84% of Indian lenders already use mixed traditional (CIBIL) and alternative data for underwriting (per FACE April 2025 report), suggesting measurement capability is table stakes, not differentiation. — https://faceofindia.org/wp-content/uploads/2025/04/State-of-Alternative-Data-in-India-A-Lending-Use-Case.pdf
+- **Razorpay capex risk**: ₹3,783 crore FY25 revenue (65% YoY growth), EBITDA-positive but ₹1,209 crore consolidated net loss; valuation targets ₹6,000 crore IPO but market skeptical due to volume-dependent transaction moat vulnerability to RBI zero-MDR signaling. — https://plindia.com/news/razorpay-posts-65-revenue-jump-in-fy25-as-ipo-preparations-advance/
+- **Aye Finance (Feb 2026 IPO)**: ₹1,010 crore offering; lending-focused NBFC using bank-grade underwriting on non-traditional borrowers. — https://www.sahi.com/blogs/kissht-ipo-details-dates-gmp-analysis
+- **InCred Holdings IPO filing**: ₹1,250 crore targeted raise; capital-constrained lending player moving to public markets on profitability narrative. — https://www.moneycontrol.com/news/business/startup/india-s-digital-lenders-return-to-growth-mode-as-profitability-asset-quality-improve-in-fy26-13943671.html/amp
+
+## Week Thread (Day-by-Day Arc)
+- **Monday R**: Researcher identifies structural bifurcation in India fintech: measurement-focused lending NBFCs (Kissht, Aye, Oxyzo, InCred) consolidating with profitable unit economics, while distribution-focused payments apps face UPI volume caps forcing secondary revenue search. Capital markets reward measurement moats over transaction moats. Open question: when does AI underwriting and regulatory openness compress NBFC margins?
+- **Monday A**: Analyst confirms data on NBFC profitability but challenges durability of measurement moat, arguing the real moat is compliance architecture (audit trails, fair lending testing, regulatory trust), which is time-limited. Once RBI opens lending to Google/Paytm (likely post-December 2026), measurement advantage evaporates. Kissht's IPO timing was perfectly early; late-stage moat builders will find defensibility gone. Strongest counter-argument: RBI stays conservative longer, protecting Kissht's margins through 2028+.
+
+## Best Sources
+- https://inc42.com/features/from-revenue-dip-to-%E2%82%B9850-cr-ipo-how-kissht-turned-it-around/ — Kissht's profitability-first strategy and net margin numbers
+- https://m.economictimes.com/tech/technology/oxyzo-financial-services-fy26-net-profit-rises-11-to-rs-375-crore-on-23-revenue-jump/amp_articleshow/131383349.cms — NBFC profitability and portfolio quality validation
+- https://faceofindia.org/wp-content/uploads/2025/04/State-of-Alternative-Data-in-India-A-Lending-Use-Case.pdf — Industry baseline on measurement capability (84% of lenders use mixed data)
+- https://www.economictimes.indiatimes.com/tech/technology/npci-extends-upi-volume-cap-timeline-by-2-more-years/articleshow/116829131.cms — UPI cap timeline driving payments/lending bifurcation
+- https://plindia.com/news/razorpay-posts-65-revenue-jump-in-fy25-as-ipo-preparations-advance/ — Razorpay vulnerability to margin compression
+- https://techstory.in/weekly-startup-funding-news-indian-startup-funding-rebounds-260-in-first-week-of-june-touches-187-mn/ — Capital flow direction (lending/compliance dominance)
+
+## Open Questions for the Blog
+1. **Regulatory timing uncertainty**: Does the RBI keep lending separate from payments providers through 2028+ (protecting Kissht's moat), or open the door by end-2027 (compressing NBFC margins within 12 months)? The answer determines whether "perfectly timed IPO" or "commodity market entrant" becomes the narrative.
+2. **Measurement moat durability under AI**: Can a startup or giant like Google replicate Kissht's underwriting loss curves in 18 months using off-the-shelf AI credit tools + access to the same UPI/merchant data, or is the compliance/trust layer (audit trails, regulatory relationships) actually durable enough to sustain a moat for 3+ years?
+3. **Razorpay escape hatch logic**: If payment gateway margins compress to 0.3-0.5% (from ~1.5-2%) within 24 months due to zero-MDR, can Razorpay build lending/NBFC operations fast enough to justify $9.2B valuation before the best moat windows close?
