@@ -1,0 +1,31 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" style="font-family: Inter, system-ui, -apple-system, sans-serif;">
+  <!-- Background -->
+  <rect x="0" y="0" width="1200" height="630" fill="#0F172A"/>
+  
+  <!-- Top accent bar -->
+  <rect x="0" y="0" width="1200" height="5" fill="#2563EB"/>
+  
+  <!-- Decorative texture circles -->
+  <circle cx="950" cy="150" r="300" fill="#FFFFFF" opacity="0.03"/>
+  <circle cx="200" cy="500" r="300" fill="#FFFFFF" opacity="0.03"/>
+  
+  <!-- Content -->
+  <text x="80" y="90" font-size="13" font-weight="600" fill="#2563EB" letter-spacing="3">STRATEGY ANALYSIS</text>
+  
+  <!-- Title (wrapped to 2 lines) -->
+  <text x="80" y="160" font-size="64" font-weight="800" fill="#FFFFFF">Why Most Moats Fail:</text>
+  <text x="80" y="240" font-size="64" font-weight="800" fill="#FFFFFF">The Validation Scope Problem</text>
+  
+  <!-- Divider line -->
+  <line x1="80" y1="290" x2="120" y2="290" stroke="#2563EB" stroke-width="3"/>
+  
+  <!-- Summary -->
+  <text x="80" y="330" font-size="22" fill="#94A3B8">Consolidation winners aren't the fastest movers.</text>
+  <text x="80" y="360" font-size="22" fill="#94A3B8">They're the ones whose moats were validated</text>
+  <text x="80" y="390" font-size="22" fill="#94A3B8">in conditions that match where they compete.</text>
+  
+  <!-- Bottom brand strip -->
+  <rect x="0" y="580" width="1200" height="50" fill="#0A1628"/>
+  <text x="80" y="612" font-size="16" fill="#475569">prashant-chandel.org/blog</text>
+  <text x="1120" y="612" text-anchor="end" font-size="16" fill="#475569">2026-06-15</text>
+</svg>

@@ -1,0 +1,101 @@
+<svg viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg" style="font-family: Inter, system-ui, -apple-system, sans-serif; width:100%; height:auto; display:block;">
+  <!-- Background -->
+  <rect x="0" y="0" width="800" height="480" fill="#F8FAFC"/>
+  
+  <!-- Accent stripe -->
+  <rect x="0" y="0" width="800" height="3" fill="#2563EB"/>
+  
+  <!-- Header band -->
+  <rect x="0" y="0" width="800" height="52" fill="#0F172A"/>
+  <text x="400" y="33" text-anchor="middle" font-size="19" font-weight="700" fill="#FFFFFF">Validation Scope Framework: Scoring Current Consolidations</text>
+  
+  <!-- Card shadows (offset) -->
+  <rect x="23" y="93" width="240" height="340" rx="8" fill="#0000000D"/>
+  <rect x="283" y="93" width="240" height="340" rx="8" fill="#0000000D"/>
+  <rect x="543" y="93" width="240" height="340" rx="8" fill="#0000000D"/>
+  
+  <!-- Three comparison cards -->
+  <!-- Card 1: Google -->
+  <rect x="20" y="90" width="240" height="340" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="20" y="90" width="240" height="3" rx="8" fill="#059669"/>
+  
+  <text x="140" y="118" text-anchor="middle" font-size="13" font-weight="600" fill="#1E3A5F">GOOGLE TPU</text>
+  
+  <!-- Big score -->
+  <text x="140" y="165" text-anchor="middle" font-size="30" font-weight="700" fill="#059669">7.25/10</text>
+  <text x="140" y="182" text-anchor="middle" font-size="11" fill="#94A3B8">Likely Winner</text>
+  
+  <!-- Metrics breakdown -->
+  <text x="35" y="215" font-size="11" font-weight="600" fill="#475569">Test Scores:</text>
+  
+  <text x="45" y="235" font-size="12" fill="#475569">▸ Validation context: 7/10</text>
+  <text x="55" y="252" font-size="10" fill="#94A3B8">Internal proof, external hedge</text>
+  
+  <text x="45" y="275" font-size="12" fill="#475569">▸ Moat strength: 8/10</text>
+  <text x="55" y="292" font-size="10" fill="#94A3B8">44% TCO advantage</text>
+  
+  <text x="45" y="315" font-size="12" fill="#475569">▸ Commoditization: 6/10</text>
+  <text x="55" y="332" font-size="10" fill="#94A3B8">24-36 month window</text>
+  
+  <text x="45" y="355" font-size="12" fill="#475569">▸ Next moat: 8/10</text>
+  <text x="55" y="372" font-size="10" fill="#94A3B8">Gemini already in market</text>
+  
+  <text x="140" y="405" text-anchor="middle" font-size="11" font-weight="600" fill="#059669">✓ Strong position</text>
+  
+  <!-- Card 2: Kissht -->
+  <rect x="280" y="90" width="240" height="340" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="280" y="90" width="240" height="3" rx="8" fill="#F59E0B"/>
+  
+  <text x="400" y="118" text-anchor="middle" font-size="13" font-weight="600" fill="#1E3A5F">KISSHT LENDING</text>
+  
+  <!-- Big score -->
+  <text x="400" y="165" text-anchor="middle" font-size="30" font-weight="700" fill="#F59E0B">5.25/10</text>
+  <text x="400" y="182" text-anchor="middle" font-size="11" fill="#94A3B8">Borderline</text>
+  
+  <!-- Metrics breakdown -->
+  <text x="295" y="215" font-size="11" font-weight="600" fill="#475569">Test Scores:</text>
+  
+  <text x="305" y="235" font-size="12" fill="#475569">▸ Validation context: 6/10</text>
+  <text x="315" y="252" font-size="10" fill="#94A3B8">Protected market, untested vs giants</text>
+  
+  <text x="305" y="275" font-size="12" fill="#475569">▸ Moat strength: 5/10</text>
+  <text x="315" y="292" font-size="10" fill="#94A3B8">2.12% GNPA (industry average)</text>
+  
+  <text x="305" y="315" font-size="12" fill="#475569">▸ Commoditization: 7/10</text>
+  <text x="315" y="332" font-size="10" fill="#94A3B8">18-36 months if RBI opens</text>
+  
+  <text x="305" y="355" font-size="12" fill="#475569">▸ Next moat: 4/10</text>
+  <text x="315" y="372" font-size="10" fill="#94A3B8">No clear next move</text>
+  
+  <text x="400" y="405" text-anchor="middle" font-size="11" font-weight="600" fill="#F59E0B">⚠ RBI timeline critical</text>
+  
+  <!-- Card 3: Salesforce -->
+  <rect x="540" y="90" width="240" height="340" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="540" y="90" width="240" height="3" rx="8" fill="#DC2626"/>
+  
+  <text x="660" y="118" text-anchor="middle" font-size="13" font-weight="600" fill="#1E3A5F">SALESFORCE AGENTFORCE</text>
+  
+  <!-- Big score -->
+  <text x="660" y="165" text-anchor="middle" font-size="30" font-weight="700" fill="#DC2626">2.75/10</text>
+  <text x="660" y="182" text-anchor="middle" font-size="11" fill="#94A3B8">Very High Risk</text>
+  
+  <!-- Metrics breakdown -->
+  <text x="555" y="215" font-size="11" font-weight="600" fill="#475569">Test Scores:</text>
+  
+  <text x="565" y="235" font-size="12" fill="#475569">▸ Validation context: 2/10</text>
+  <text x="575" y="252" font-size="10" fill="#94A3B8">No real customer ROI data</text>
+  
+  <text x="565" y="275" font-size="12" fill="#475569">▸ Moat strength: 2/10</text>
+  <text x="575" y="292" font-size="10" fill="#94A3B8">56% customers see under 5% ROI</text>
+  
+  <text x="565" y="315" font-size="12" fill="#475569">▸ Commoditization: 4/10</text>
+  <text x="575" y="332" font-size="10" fill="#94A3B8">18-24 months until aware of alternatives</text>
+  
+  <text x="565" y="355" font-size="12" fill="#475569">▸ Next moat: 3/10</text>
+  <text x="575" y="372" font-size="10" fill="#94A3B8">Data Cloud unproven</text>
+  
+  <text x="660" y="405" text-anchor="middle" font-size="11" font-weight="600" fill="#DC2626">✗ Churn cliff risk Q3-Q4 2027</text>
+  
+  <!-- Source line -->
+  <text x="790" y="472" text-anchor="end" font-size="10" fill="#94A3B8">prashant-chandel.org/blog</text>
+</svg>

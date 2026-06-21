@@ -9,6 +9,7 @@ their own topics via web search for current events.
 
 ## Explored (move topics here after a week covers them)
 <!-- Agents: move topics here after they've been covered in a weekly blog -->
+- Moat validation and consolidation timing as predictors of long-term winners (covered: 2026-06-15, "Why Most Moats Fail: The Validation Scope Problem" — validation scope framework: four tests (context match, strength, commoditization timeline, next moat); Google 7.25/10, Kissht 5.25/10, Salesforce 2.75/10; historical parallels: Zillow $880M loss, Intel moat-to-anchor, Microsoft successful revalidation, Cisco Cerent failure; consolidation speed doesn't predict outcomes, validation scope does)
 - SaaS pricing model breakdown and bifurcation (covered: 2026-06-08, "The Measurement Moat" — per-seat pricing broken by AI automation; measurable vs. unmeasurable categories; outcome-based pricing; measurement moats last 3-7 years vs. infrastructure moats at 12-18 months)
 - AI coding agents and routing infrastructure (covered: 2026-06-08, "The Measurement Moat" — Cognition's model-agnostic routing moat compressed to 18-24 months by OpenAI's distribution advantage; switching costs around measurement baselines)
 - Pharma competitive dynamics and measurement moats (covered: 2026-06-08, "The Measurement Moat" — Eli Lilly vs. Novo Nordisk GLP-1 market; measurement (22.5% vs. 15-17% weight loss) beats brand, price, first-mover advantage)
