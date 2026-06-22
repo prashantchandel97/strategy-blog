@@ -1,0 +1,17 @@
+{
+  "blog_file": "2026-06-15-validation-scope.md",
+  "blog_date": "2026-06-15",
+  "tracked_on": "2026-06-22",
+  "follower_count": 54,
+  "follower_delta": 0,
+  "note": "Tweet metrics (impressions, likes, retweets) require Twitter API Basic tier. Check analytics.twitter.com and paste manually if needed.",
+  "tweet_metrics": {
+    "impressions": null,
+    "likes": null,
+    "retweets": null,
+    "replies": null,
+    "bookmarks": null,
+    "completion_rate": null,
+    "engagement_score": null
+  }
+}
