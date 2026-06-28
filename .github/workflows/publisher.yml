@@ -9,6 +9,10 @@ on:
         description: 'Specific blog file to publish (e.g. blogs/2026-05-25-governance-is-the-new-moat.md). Leave empty to publish latest.'
         required: false
         default: ''
+      post_tweets:
+        description: 'Post tweet thread to X? Set to true to enable.'
+        required: false
+        default: 'false'
 
 jobs:
   publish:
@@ -62,11 +66,15 @@ jobs:
           TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
           TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
         run: |
+          BLOG_ARG=""
+          TWEET_ARG="--blog-only"
           if [ -n "${{ github.event.inputs.blog_file }}" ]; then
-            python3 publish.py --blog-file "${{ github.event.inputs.blog_file }}"
-          else
-            python3 publish.py
+            BLOG_ARG="--blog-file ${{ github.event.inputs.blog_file }}"
           fi
+          if [ "${{ github.event.inputs.post_tweets }}" = "true" ]; then
+            TWEET_ARG=""
+          fi
+          python3 publish.py $BLOG_ARG $TWEET_ARG
 
       - name: Commit cover PNGs and publish log
         run: |
