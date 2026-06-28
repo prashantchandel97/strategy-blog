@@ -1,0 +1,87 @@
+<svg viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg" style="font-family: Inter, system-ui, -apple-system, sans-serif; width:100%; height:auto; display:block;">
+  <!-- Background -->
+  <rect width="800" height="480" fill="#F8FAFC"/>
+  
+  <!-- Header band -->
+  <rect x="0" y="0" width="800" height="3" fill="#2563EB"/>
+  <rect x="0" y="3" width="800" height="49" fill="#0F172A"/>
+  <text x="400" y="35" text-anchor="middle" font-size="19" font-weight="700" fill="#FFFFFF">Data-Ready Domains Win: AI ROI by Category</text>
+  
+  <!-- Left section: Data-Ready SaaS -->
+  <g>
+    <!-- Card shadow -->
+    <rect x="23" y="83" width="360" height="360" rx="8" fill="#0000000D"/>
+    <!-- Card -->
+    <rect x="20" y="80" width="360" height="360" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <!-- Accent bar -->
+    <rect x="20" y="80" width="360" height="3" rx="2" fill="#059669"/>
+    
+    <!-- Section header -->
+    <text x="200" y="110" text-anchor="middle" font-size="13" font-weight="600" fill="#1E3A5F">DATA-READY DOMAINS</text>
+    <text x="200" y="128" text-anchor="middle" font-size="11" fill="#94A3B8">Structured outcomes, binary results</text>
+    
+    <!-- Key metric -->
+    <text x="200" y="170" text-anchor="middle" font-size="30" font-weight="700" fill="#059669">8 months</text>
+    <text x="200" y="188" text-anchor="middle" font-size="11" fill="#94A3B8">Average ROI payback</text>
+    
+    <!-- Examples list -->
+    <text x="40" y="220" font-size="12" font-weight="600" fill="#0F172A">Fintech SaaS</text>
+    <text x="40" y="238" font-size="11" fill="#475569">▸ Stripe: 32% fraud reduction</text>
+    <text x="40" y="254" font-size="11" fill="#475569">▸ Razorpay: 40% loss reduction YoY</text>
+    <text x="40" y="270" font-size="11" fill="#475569">▸ Valuation: 10-15x revenue</text>
+    
+    <text x="40" y="300" font-size="12" font-weight="600" fill="#0F172A">Finance Operations</text>
+    <text x="40" y="318" font-size="11" fill="#475569">▸ Invoice automation</text>
+    <text x="40" y="334" font-size="11" fill="#475569">▸ 26-31% cost savings</text>
+    <text x="40" y="350" font-size="11" fill="#475569">▸ Valuation: 6-9x revenue</text>
+    
+    <text x="40" y="380" font-size="12" font-weight="600" fill="#0F172A">Supply Chain / Operations</text>
+    <text x="40" y="398" font-size="11" fill="#475569">▸ 18% inventory reduction</text>
+    <text x="40" y="414" font-size="11" fill="#475569">▸ 12-14 month payback</text>
+  </g>
+  
+  <!-- Right section: Unstructured SaaS -->
+  <g>
+    <!-- Card shadow -->
+    <rect x="423" y="83" width="360" height="360" rx="8" fill="#0000000D"/>
+    <!-- Card -->
+    <rect x="420" y="80" width="360" height="360" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <!-- Accent bar -->
+    <rect x="420" y="80" width="360" height="3" rx="2" fill="#DC2626"/>
+    
+    <!-- Section header -->
+    <text x="600" y="110" text-anchor="middle" font-size="13" font-weight="600" fill="#1E3A5F">UNSTRUCTURED DOMAINS</text>
+    <text x="600" y="128" text-anchor="middle" font-size="11" fill="#94A3B8">Diffuse outcomes, multi-factor causation</text>
+    
+    <!-- Key metric -->
+    <text x="600" y="170" text-anchor="middle" font-size="30" font-weight="700" fill="#DC2626">18-24+ months</text>
+    <text x="600" y="188" text-anchor="middle" font-size="11" fill="#94A3B8">Average ROI payback (or failure)</text>
+    
+    <!-- Examples list -->
+    <text x="440" y="220" font-size="12" font-weight="600" fill="#0F172A">Sales CRM</text>
+    <text x="440" y="238" font-size="11" fill="#475569">▸ Salesforce: No consistent ROI</text>
+    <text x="440" y="254" font-size="11" fill="#475569">▸ HubSpot: Unclear attribution</text>
+    <text x="440" y="270" font-size="11" fill="#475569">▸ Valuation: 4-6x revenue</text>
+    
+    <text x="440" y="300" font-size="12" font-weight="600" fill="#0F172A">Marketing Automation</text>
+    <text x="440" y="318" font-size="11" fill="#475569">▸ Reduces cost-per-impression</text>
+    <text x="440" y="334" font-size="11" fill="#475569">▸ Revenue impact unclear</text>
+    <text x="440" y="350" font-size="11" fill="#475569">▸ Valuation: 2-4x revenue</text>
+    
+    <text x="440" y="380" font-size="12" font-weight="600" fill="#0F172A">Customer Service</text>
+    <text x="440" y="398" font-size="11" fill="#475569">▸ Deflection rate improves</text>
+    <text x="440" y="414" font-size="11" fill="#475569">▸ Bottom-line impact diffuse</text>
+  </g>
+  
+  <!-- Divider arrow -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#94A3B8"/>
+    </marker>
+  </defs>
+  <line x1="390" y1="260" x2="410" y2="260" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="400" y="250" text-anchor="middle" font-size="10" font-weight="600" fill="#94A3B8">BIFURCATION</text>
+  
+  <!-- Source line -->
+  <text x="790" y="472" text-anchor="end" font-size="10" fill="#94A3B8">prashant-chandel.org/blog</text>
+</svg>
