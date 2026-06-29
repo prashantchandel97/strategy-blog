@@ -1,0 +1,17 @@
+{
+  "blog_file": "2026-06-08-measurement-moats.md",
+  "blog_date": "2026-06-08",
+  "tracked_on": "2026-06-29",
+  "follower_count": 51,
+  "follower_delta": -3,
+  "note": "Tweet metrics (impressions, likes, retweets) require Twitter API Basic tier. Check analytics.twitter.com and paste manually if needed.",
+  "tweet_metrics": {
+    "impressions": null,
+    "likes": null,
+    "retweets": null,
+    "replies": null,
+    "bookmarks": null,
+    "completion_rate": null,
+    "engagement_score": null
+  }
+}
