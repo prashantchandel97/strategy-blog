@@ -2,7 +2,7 @@
 
 _Compressed intelligence about this blog's body of work. Read by the compiler before writing each post._
 
-_Last updated: 2026-07-02. Covers 7 posts._
+_Last updated: 2026-07-03. Covers 7 posts._
 
 ---
 
@@ -11,19 +11,16 @@ _Last updated: 2026-07-02. Covers 7 posts._
 ### AI Infrastructure & Economics
 
 - 2026-05-11: Full-stack ownership beats better chips. Hyperscalers subsidize infrastructure to win application margins. Independent chip startups dead without captive customers.
-- 2026-05-18: Cost visibility determines market structure. Bundlers who hide costs (Microsoft, Google, Apple, Meta) will control 80%+ of market. Transparent pricers (OpenAI, Anthropic) capped at 5-20% serving niches. On-device serves commodity queries; cloud serves frontier work.
+- 2026-05-18: Cost visibility determines market structure. Bundlers who hide costs (Microsoft, Google, Apple, Meta) control 80%+ of market. Transparent pricers (OpenAI, Anthropic) capped at 5-20% serving niches. On-device serves commodity queries; cloud serves frontier work.
 - 2026-06-01: Token consumption growing 10x faster than cost declines. Agentic AI burns 3.2x to 50x more tokens per task. Memory now 64-68% of AI chip costs (was 33% in 2023). Token tax hits ROI walls before lock-in savings rescue adoption.
-- 2026-06-22: Custom silicon (TPU, Trainium, Maia) cuts costs 40-50% versus Nvidia GPUs, accelerating bifurcation. Data-native domains achieve 8-month ROI; unstructured domains stall at 18-24+ months. TSMC 3nm capacity at 100% utilization with demand 3x supply constrains rollout timeline.
+- 2026-06-22: Custom silicon (TPU, Trainium, Maia) cuts costs 40-50% versus Nvidia GPUs, accelerating bifurcation. Data-native domains achieve 8-month ROI; unstructured domains stall at 18-24+ months. TSMC 3nm capacity at 100% utilization with demand 3x supply constrains rollout.
 
 ### SaaS, Moats & Enterprise Software
 
+- 2026-05-25: 95% of enterprise AI pilots fail from scoping problems, not technology gaps. Measurement discipline separates 60%+ ROI winners from 29% ROI losers. Razorpay Rs 1,209 crore redomiciling expense (32% of annual revenue) creates structural moat. Platform owners competing downstream face automatic antitrust scrutiny.
 - 2026-06-08: Infrastructure moats last 12-18 months (Rambus HBM controllers). Measurement moats last 3-7 years (Eli Lilly weight loss, Zendesk verified resolutions). Distribution advantages last indefinitely with measurement parity. Per-seat pricing dead due to AI breaking headcount-to-value link.
 - 2026-06-15: Validation scope (gap between where moat proven versus deployed) determines consolidation winners. Zillow, Intel, Google examples show moats collapse when context shifts. Google scores 7.25/10, Kissht 5.25/10, Salesforce 2.75/10 on validation framework.
 - 2026-06-22: Enterprise AI deepens sharply in data-native domains (fintech 8-month payback) and stalls in unstructured domains (sales 18-24+ months). Data structure beats discipline. Fintech SaaS should trade at 20-25x revenue while horizontal SaaS compresses to 5-7x by 2028.
-
-### Governance, Compliance & Market Structure
-
-- 2026-05-25: 95% of enterprise AI pilots fail from scoping problems, not technology gaps. Measurement discipline separates 60%+ ROI winners from 29% ROI losers. Razorpay's Rs 1,209 crore redomiciling expense (32% of annual revenue) creates structural moat. Platform owners competing downstream face automatic antitrust scrutiny.
 
 ---
 
@@ -42,7 +39,7 @@ Do NOT re-explain these from scratch in future posts. A brief reference is enoug
 - **On-device AI**: 2026-05-18 — AI running locally, nearly free per query after chip purchase
 - **Token**: 2026-06-01 — unit of text (roughly 4 characters or 0.75 words) AI models process
 - **Agentic AI**: 2026-06-01 — AI performing multi-step tasks autonomously
-- **HBM**: 2026-06-01, 2026-06-08 — high-bandwidth memory, now 64-68% of AI chip costs
+- **HBM (high-bandwidth memory)**: 2026-06-01, 2026-06-08 — now 64-68% of AI chip costs
 - **CUDA**: 2026-06-01 — Nvidia's GPU programming platform, source of vendor lock-in
 - **Infrastructure moat | measurement moat | distribution advantage**: 2026-06-08 — 12-18 month lifespan | 3-7 year lifespan | indefinite with measurement parity
 - **Per-seat pricing model**: 2026-06-08 — charging per user, broken by AI automation
@@ -55,19 +52,19 @@ Do NOT re-explain these from scratch in future posts. A brief reference is enoug
 ## Running Narrative Threads
 
 1. **AI infrastructure consolidation** (4 posts: 2026-05-11, 2026-05-18, 2026-06-01, 2026-06-22)
-   Hyperscalers building moats through full-stack ownership. Independent chip startups dead. Custom chips cutting costs 40-50%. TSMC 3nm capacity at 100% utilization with demand 3x supply. Next angles: memory manufacturers (Samsung, SK Hynix, Micron) as winners, when enterprises break CUDA lock-in, whether on-device AI leaps forward and cannibalizes cloud.
+   Hyperscalers building moats through full-stack ownership. Custom chips cutting costs 40-50%. TSMC 3nm capacity at 100% with demand 3x supply. Next angles: memory manufacturers (Samsung, SK Hynix, Micron) as winners, when enterprises break CUDA lock-in, datacenter power and cooling economics.
 
 2. **Cost structure determines winners** (5 posts across all categories)
-   Economic structure predicts outcomes better than product quality. Bundlers hide costs and dominate. Token tax threatens enterprise AI. Data-native domains achieve 8-month ROI; unstructured domains fail at 18-24+ months. Next: token cost compression versus consumption growth dynamics, which categories hit ROI walls first, fintech SaaS repricing at IPO.
+   Economic structure predicts outcomes better than product quality. Bundlers hide costs and dominate. Token tax threatens enterprise AI ROI. Data-native domains achieve 8-month ROI; unstructured domains fail at 18-24+ months. Next: which categories hit ROI walls first, fintech SaaS repricing at IPO, token cost compression versus consumption growth dynamics.
 
 3. **Moat durability hierarchy** (2 posts: 2026-06-08, 2026-06-15)
-   Infrastructure moats (12-18 months) | measurement moats (3-7 years) | distribution advantages (indefinite with parity). Validation scope determines which moats survive deployment. Moats don't travel. Next: whether outcome guarantees prove defensible, how many companies survive context shifts.
+   Infrastructure moats (12-18 months) | measurement moats (3-7 years) | distribution advantages (indefinite with parity). Validation scope determines which moats survive deployment. Moats don't travel across contexts. Next: whether outcome guarantees prove defensible, enterprise M&A around moat durability.
 
 4. **SaaS bifurcation by measurability** (4 posts: 2026-06-08, 2026-06-15, 2026-06-22, implicit 2026-06-01)
-   Measurable categories (fintech, finance ops) survive with premium valuations. Unmeasurable categories (CRM, marketing) commoditize. Per-seat pricing dead. Fintech achieves 8-month ROI; horizontal SaaS stuck at 18-24+ months. Current valuation gap 1.5-2x should be 3x. Next: when fintech SaaS reprices to 20-25x, whether horizontal SaaS compresses to 5-7x by 2028.
+   Measurable categories (fintech, finance ops) survive with premium valuations. Unmeasurable categories (CRM, marketing) commoditize. Per-seat pricing dead. Fintech achieves 8-month ROI; horizontal SaaS stuck at 18-24+ months. Current valuation gap 1.5-2x should be 3x. Next: when fintech SaaS reprices to 20-25x, whether horizontal SaaS compresses to 5-7x by 2028, Stripe and Razorpay IPO timing impact.
 
 5. **Governance as competitive filter** (2 posts: 2026-05-25, implicit 2026-06-22)
-   Measurement discipline and compliance separate winners from 95% failure rate. Razorpay Rs 1,209 crore redomiciling cost insurmountable for smaller players. Data-ready domains get regulatory exemptions while unstructured domains face scrutiny. Next: whether governance is learnable or structural, fintech M&A around compliance survivors.
+   Measurement discipline and compliance separate winners from 95% failure rate. Razorpay Rs 1,209 crore redomiciling cost insurmountable for smaller players. Data-ready domains get regulatory advantages. Next: whether governance is learnable or structural, fintech M&A around compliance survivors.
 
 ---
 
@@ -97,13 +94,11 @@ Do NOT re-explain these from scratch in future posts. A brief reference is enoug
 - Does three-company full-stack dominance create actionable antitrust risk?
 - Can any geography (China, EU, India) build competing full-stack AI infrastructure?
 - Is 95% AI pilot failure rate temporary learning curve or permanent evidence most work is judgment-based?
-- Will 2027 AI budgets grow despite 95% failure rates and token cost overruns?
 - When do enterprises break CUDA lock-in despite switching costs?
 - Do memory manufacturers (Samsung, SK Hynix, Micron) become real winners as HBM becomes 64-68% of chip costs?
 - Which scenario: token costs compress faster than consumption grows (market expands), token growth outpaces decline only for agentic cases (bifurcates), or token tax spreads across all AI (collapses)?
 - TSMC 3nm at 100% with demand 3x supply: who doesn't get chips in 2027-2028, delaying custom silicon advantages?
 - When do fintech SaaS companies IPO and trade up to 15-18x, triggering horizontal SaaS repricing downward?
-- If Stripe and Razorpay IPO late 2026 or early 2027 at 10-12x and trade up to 15-18x, does this trigger immediate repricing?
 - Does 42% enterprise AI project abandonment rate persist through 2026-2027, and do capital markets reprice infrastructure spend as overinvestment?
 - Does Salesforce face churn cliff Q3-Q4 2027 when 56% under-5%-ROI customers renew?
 - Will Kissht become acquisition target if RBI opens lending December 2026?
@@ -133,4 +128,4 @@ Do NOT re-explain these from scratch in future posts. A brief reference is enoug
 
 ---
 
-_Last updated: 2026-07-02_
+_Last updated: 2026-07-03_
