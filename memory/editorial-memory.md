@@ -2,7 +2,7 @@
 
 _Compressed intelligence about this blog's body of work. Read by the compiler before writing each post._
 
-_Last updated: 2026-07-03. Covers 7 posts._
+_Last updated: 2026-07-04. Covers 7 posts._
 
 ---
 
@@ -54,7 +54,7 @@ Do NOT re-explain these from scratch in future posts. A brief reference is enoug
 1. **AI infrastructure consolidation** (4 posts: 2026-05-11, 2026-05-18, 2026-06-01, 2026-06-22)
    Hyperscalers building moats through full-stack ownership. Custom chips cutting costs 40-50%. TSMC 3nm capacity at 100% with demand 3x supply. Next angles: memory manufacturers (Samsung, SK Hynix, Micron) as winners, when enterprises break CUDA lock-in, datacenter power and cooling economics.
 
-2. **Cost structure determines winners** (5 posts across all categories)
+2. **Cost structure determines winners** (all 7 posts)
    Economic structure predicts outcomes better than product quality. Bundlers hide costs and dominate. Token tax threatens enterprise AI ROI. Data-native domains achieve 8-month ROI; unstructured domains fail at 18-24+ months. Next: which categories hit ROI walls first, fintech SaaS repricing at IPO, token cost compression versus consumption growth dynamics.
 
 3. **Moat durability hierarchy** (2 posts: 2026-06-08, 2026-06-15)
@@ -128,4 +128,4 @@ Do NOT re-explain these from scratch in future posts. A brief reference is enoug
 
 ---
 
-_Last updated: 2026-07-03_
+_Last updated: 2026-07-04_
