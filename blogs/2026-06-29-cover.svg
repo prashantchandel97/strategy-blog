@@ -1,0 +1,35 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" style="font-family: Inter, system-ui, -apple-system, sans-serif; width:100%; height:auto; display:block;">
+  <!-- Background -->
+  <rect x="0" y="0" width="1200" height="630" fill="#0F172A"/>
+  
+  <!-- Top accent bar -->
+  <rect x="0" y="0" width="1200" height="5" fill="#2563EB"/>
+  
+  <!-- Decorative texture circles -->
+  <circle cx="950" cy="100" r="300" fill="#FFFFFF" opacity="0.03"/>
+  <circle cx="200" cy="550" r="300" fill="#FFFFFF" opacity="0.03"/>
+  
+  <!-- Content -->
+  <text x="80" y="90" font-size="13" font-weight="600" fill="#2563EB" letter-spacing="3">STRATEGY ANALYSIS</text>
+  
+  <!-- Title (two lines) -->
+  <text x="80" y="160" font-size="64" font-weight="800" fill="#FFFFFF">When Regulatory Moats</text>
+  <text x="80" y="240" font-size="64" font-weight="800" fill="#FFFFFF">Become Liabilities</text>
+  
+  <!-- Divider line -->
+  <line x1="80" y1="290" x2="120" y2="290" stroke="#2563EB" stroke-width="3"/>
+  
+  <!-- Summary text (two lines) -->
+  <text x="80" y="330" font-size="22" fill="#94A3B8">Accenture lost $240M betting on the wrong regulatory</text>
+  <text x="80" y="362" font-size="22" fill="#94A3B8">cycle. Salesforce and Razorpay face the next one.</text>
+  
+  <!-- Decorative element: intersecting lines (abstract geometric) -->
+  <line x1="920" y1="320" x2="1050" y2="320" stroke="#1E3A5F" stroke-width="1.5"/>
+  <line x1="985" y1="255" x2="985" y2="385" stroke="#1E3A5F" stroke-width="1.5"/>
+  <circle cx="985" cy="320" r="45" fill="none" stroke="#1E3A5F" stroke-width="1.5"/>
+  
+  <!-- Bottom brand strip -->
+  <rect x="0" y="580" width="1200" height="50" fill="#0A1628"/>
+  <text x="80" y="612" font-size="16" fill="#475569">prashant-chandel.org/blog</text>
+  <text x="1120" y="612" text-anchor="end" font-size="16" fill="#475569">2026-06-29</text>
+</svg>
