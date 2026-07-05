@@ -1,6 +1,6 @@
 # Performance Insights
 
-_Updated: 2026-07-04. Based on 6 weeks of data._
+_Updated: 2026-07-05. Based on 6 weeks of data._
 
 **Note on metrics:** Tweet-level data (impressions, likes, retweets) requires Twitter API Basic tier and is not automatically tracked. Follower count is tracked weekly.
 
@@ -35,7 +35,7 @@ _Pending data._
 ## Audience Signals
 
 ### What drives replies
-Infrastructure economics with precise percentages appears to resonate. Token economics post (2026-06-01) with specific cost breakdowns (memory 64-68% of chip costs, agentic AI 3.2x to 50x consumption multipliers) drove only measurable growth event (+4 followers). Economic dissection of infrastructure beats abstract frameworks.
+Infrastructure economics with precise percentages appears to resonate. Token economics post (2026-05-25, actually 2026-06-01 per JSON) with specific cost breakdowns (memory 64-68% of chip costs, agentic AI 3.2x to 50x consumption multipliers) drove only confirmed growth event (+4 followers). Economic dissection beats abstract frameworks.
 
 ### What gets bookmarked
 _Pending tweet-level data. Manual tracking from analytics.twitter.com recommended._
@@ -54,9 +54,9 @@ _Pending tweet-level data. Manual tracking from analytics.twitter.com recommende
 - Volatility: One churn event week of 2026-06-08 (-3 followers, measurement moats topic) fully recovered by 2026-06-15
 - Average weekly growth: +0.67 followers
 
-**Pattern**: Single spike (2026-05-25, token economics post) accounts for all net growth. Follower count oscillates 51-54 with one churn event fully recovered. Six weeks insufficient to separate topic signal from noise at this audience size. Each follower decision swings metrics ±2%. Economic infrastructure analysis with specific percentages drove only confirmed growth; framework and governance posts show no measurable impact yet but sample too small for confident conclusions.
+**Pattern**: Single spike (2026-05-25, token economics post) accounts for all net growth. Follower count oscillates 51-54 range. At 54-follower base, each individual decision swings metrics by 2%, making topic attribution unreliable. Economic infrastructure analysis with specific percentages drove only confirmed growth; framework and governance posts show no measurable impact yet but sample too small for confident conclusions.
 
-**Critical gap**: Zero tweet-level engagement data after 6 posts. Cannot optimize hook style, thread length, or identify what drives bookmarks and retweets. Manual weekly tracking from analytics.twitter.com now essential for content strategy beyond follower count.
+**Critical gap**: Zero tweet-level engagement data after 6 posts. Cannot optimize hook style, thread length, or identify what drives bookmarks and retweets. Manual weekly tracking from analytics.twitter.com essential for content strategy beyond follower count.
 
 ---
 
@@ -64,7 +64,7 @@ _Pending tweet-level data. Manual tracking from analytics.twitter.com recommende
 
 ### For the Researcher
 
-**Prioritise**: Infrastructure economics with precise cost breakdowns. Token economics post with specific numbers (memory 64-68% of chip costs, agentic AI burns 3.2x to 50x more tokens) drove only measurable audience expansion. Continue cost-structure-determines-winners framework across verticals: memory manufacturers as HBM becomes 64-68% of chip costs, TSMC capacity constraints (demand 3x supply), datacenter power economics, CUDA switching costs, custom silicon 40-50% cost reductions.
+**Prioritize**: Infrastructure economics with precise cost breakdowns. Token economics post with specific numbers (memory 64-68% of chip costs, agentic AI burns 3.2x to 50x more tokens) drove only measurable audience expansion. Continue cost-structure-determines-winners framework across verticals: memory manufacturers as HBM becomes 64-68% of chip costs, TSMC capacity constraints (demand 3x supply), datacenter power economics, CUDA switching costs, custom silicon 40-50% cost reductions.
 
 **Test carefully**: Framework posts (measurement moats, validation scope) and governance posts show no growth signal yet but six-week sample at 54-follower base too small for abandonment. Measurement moats triggered churn but recovered, suggesting temporary rather than structural mismatch.
 
@@ -80,4 +80,4 @@ _Pending tweet-level data. Manual tracking from analytics.twitter.com recommende
 
 ---
 
-_Last updated: 2026-07-04_
+_Last updated: 2026-07-05_

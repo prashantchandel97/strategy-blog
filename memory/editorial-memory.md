@@ -2,7 +2,7 @@
 
 _Compressed intelligence about this blog's body of work. Read by the compiler before writing each post._
 
-_Last updated: 2026-07-04. Covers 7 posts._
+_Last updated: 2026-07-05. Covers 7 posts._
 
 ---
 
@@ -128,4 +128,4 @@ Do NOT re-explain these from scratch in future posts. A brief reference is enoug
 
 ---
 
-_Last updated: 2026-07-04_
+_Last updated: 2026-07-05_
