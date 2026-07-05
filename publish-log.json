@@ -148,5 +148,14 @@
     "tweet_count": 0,
     "first_tweet_id": null,
     "tweet_ids": []
+  },
+  {
+    "timestamp": "2026-07-05T17:57:50.573853",
+    "blog_file": "2026-06-29-regulatory-moats-fragile.md",
+    "blog_slug": "2026-06-29-regulatory-moats-fragile",
+    "blog_status": "published",
+    "tweet_count": 0,
+    "first_tweet_id": null,
+    "tweet_ids": []
   }
 ]
