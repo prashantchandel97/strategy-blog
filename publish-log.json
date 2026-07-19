@@ -166,5 +166,14 @@
     "tweet_count": 0,
     "first_tweet_id": null,
     "tweet_ids": []
+  },
+  {
+    "timestamp": "2026-07-19T17:53:46.907290",
+    "blog_file": "2026-07-13-when-capex-reveals-strategy.md",
+    "blog_slug": "2026-07-13-when-capex-reveals-strategy",
+    "blog_status": "published",
+    "tweet_count": 0,
+    "first_tweet_id": null,
+    "tweet_ids": []
   }
 ]
