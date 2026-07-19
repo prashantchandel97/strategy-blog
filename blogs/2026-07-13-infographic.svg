@@ -1,0 +1,94 @@
+<svg viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg" style="font-family: Inter, system-ui, -apple-system, sans-serif; width:100%; height:auto; display:block;">
+  <!-- Background -->
+  <rect x="0" y="0" width="800" height="480" fill="#F8FAFC"/>
+  
+  <!-- Header band with accent stripe -->
+  <rect x="0" y="0" width="800" height="3" fill="#2563EB"/>
+  <rect x="0" y="3" width="800" height="49" fill="#0F172A"/>
+  <text x="400" y="35" text-anchor="middle" fill="#FFFFFF" font-size="19" font-weight="700">Meta's Capital Constraint: Three Bets, Two Can Be Funded</text>
+  
+  <!-- Three comparison cards with shadows -->
+  
+  <!-- Card 1 Shadow: AI Infrastructure -->
+  <rect x="23" y="83" width="240" height="340" rx="8" fill="#0000000D"/>
+  <!-- Card 1: AI Infrastructure -->
+  <rect x="20" y="80" width="240" height="340" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="20" y="80" width="240" height="3" rx="8" fill="#2563EB"/>
+  <text x="140" y="110" text-anchor="middle" font-size="13" font-weight="600" fill="#1E3A5F">AI INFRASTRUCTURE</text>
+  <text x="140" y="135" text-anchor="middle" font-size="11" fill="#94A3B8">Defensive • Must Fund</text>
+  
+  <text x="140" y="180" text-anchor="middle" font-size="30" font-weight="700" fill="#2563EB">$110B+</text>
+  <text x="140" y="200" text-anchor="middle" font-size="11" fill="#94A3B8">Data centers & GPUs</text>
+  
+  <text x="30" y="235" font-size="12" fill="#475569">▸ Stay competitive with</text>
+  <text x="40" y="253" font-size="12" fill="#475569">Google & Microsoft</text>
+  
+  <text x="30" y="278" font-size="12" fill="#475569">▸ Required to train and</text>
+  <text x="40" y="296" font-size="12" fill="#475569">run AI models at scale</text>
+  
+  <text x="30" y="321" font-size="12" fill="#475569">▸ Without it, Meta loses</text>
+  <text x="40" y="339" font-size="12" fill="#475569">developer platform</text>
+  
+  <text x="30" y="370" font-size="11" font-weight="600" fill="#059669">Status: Fully funded</text>
+  <text x="30" y="390" font-size="10" fill="#94A3B8">20-25% of annual revenue</text>
+  <text x="30" y="405" font-size="10" fill="#94A3B8">committed through 2028</text>
+  
+  <!-- Card 2 Shadow: Custom Silicon -->
+  <rect x="283" y="83" width="240" height="340" rx="8" fill="#0000000D"/>
+  <!-- Card 2: Custom Silicon -->
+  <rect x="280" y="80" width="240" height="340" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="280" y="80" width="240" height="3" rx="8" fill="#F59E0B"/>
+  <text x="400" y="110" text-anchor="middle" font-size="13" font-weight="600" fill="#1E3A5F">CUSTOM SILICON</text>
+  <text x="400" y="135" text-anchor="middle" font-size="11" fill="#94A3B8">Defensive • Hedge Bet</text>
+  
+  <text x="400" y="180" text-anchor="middle" font-size="30" font-weight="700" fill="#F59E0B">$15-20B</text>
+  <text x="400" y="200" text-anchor="middle" font-size="11" fill="#94A3B8">MTIA v3 (Iris) chip R&D</text>
+  
+  <text x="290" y="235" font-size="12" fill="#475569">▸ 40-50% cost reduction</text>
+  <text x="300" y="253" font-size="12" fill="#475569">versus Nvidia pricing</text>
+  
+  <text x="290" y="278" font-size="12" fill="#475569">▸ Escapes TSMC CoWoS</text>
+  <text x="300" y="296" font-size="12" fill="#475569">bottleneck (was 13K/mo)</text>
+  
+  <text x="290" y="321" font-size="12" fill="#475569">▸ But TSMC now scaling</text>
+  <text x="300" y="339" font-size="12" fill="#475569">to 140K/mo by end 2026</text>
+  
+  <text x="290" y="370" font-size="11" font-weight="600" fill="#059669">Status: Funded</text>
+  <text x="290" y="390" font-size="10" fill="#94A3B8">Production Sept 2026, may</text>
+  <text x="290" y="405" font-size="10" fill="#94A3B8">be hedge vs. solved problem</text>
+  
+  <!-- Card 3 Shadow: India Fintech -->
+  <rect x="543" y="83" width="240" height="340" rx="8" fill="#0000000D"/>
+  <!-- Card 3: India Fintech -->
+  <rect x="540" y="80" width="240" height="340" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="540" y="80" width="240" height="3" rx="8" fill="#DC2626"/>
+  <text x="660" y="110" text-anchor="middle" font-size="13" font-weight="600" fill="#1E3A5F">INDIA FINTECH</text>
+  <text x="660" y="135" text-anchor="middle" font-size="11" fill="#94A3B8">Offensive • Deferred</text>
+  
+  <text x="660" y="180" text-anchor="middle" font-size="30" font-weight="700" fill="#DC2626">$0.5-1B</text>
+  <text x="660" y="200" text-anchor="middle" font-size="11" fill="#94A3B8">WhatsApp payments annually</text>
+  
+  <text x="550" y="235" font-size="12" fill="#475569">▸ 500M users in India,</text>
+  <text x="560" y="253" font-size="12" fill="#475569">only 0.65% UPI share</text>
+  
+  <text x="550" y="278" font-size="12" fill="#475569">▸ PhonePe dominates at</text>
+  <text x="560" y="296" font-size="12" fill="#475569">46.2%, planning $10B IPO</text>
+  
+  <text x="550" y="321" font-size="12" fill="#475569">▸ Kunal Shah (CRED CEO)</text>
+  <text x="560" y="339" font-size="12" fill="#475569">friction 17 days after hire</text>
+  
+  <text x="550" y="370" font-size="11" font-weight="600" fill="#DC2626">Status: Deferred 5-7 yrs</text>
+  <text x="550" y="390" font-size="10" fill="#94A3B8">Capital constraint forces</text>
+  <text x="550" y="405" font-size="10" fill="#94A3B8">choice; market likely lost</text>
+  
+  <!-- Bottom metric callout -->
+  <rect x="20" y="440" width="760" height="26" rx="4" fill="#FEF3C7"/>
+  <text x="30" y="458" font-size="12" font-weight="600" fill="#0F172A">Free cash flow Q1 2026: $12.4B</text>
+  <text x="280" y="458" font-size="12" fill="#92400E">|</text>
+  <text x="295" y="458" font-size="12" font-weight="600" fill="#0F172A">Capex same quarter: $19B</text>
+  <text x="500" y="458" font-size="12" fill="#92400E">|</text>
+  <text x="515" y="458" font-size="12" font-weight="600" fill="#DC2626">2027 projection: -$24B cash burn</text>
+  
+  <!-- Source -->
+  <text x="790" y="472" text-anchor="end" font-size="10" fill="#94A3B8">prashant-chandel.org/blog</text>
+</svg>
