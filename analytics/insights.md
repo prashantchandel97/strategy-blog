@@ -1,6 +1,6 @@
 # Performance Insights
 
-_Updated: 2026-07-13. Based on 6 weeks of data._
+_Updated: 2026-07-20. Based on 6 weeks of data._
 
 **Note on metrics:** Tweet-level data (impressions, likes, retweets) requires Twitter API Basic tier and is not automatically tracked. Follower count is tracked weekly.
 
@@ -45,23 +45,13 @@ _Pending tweet-level data._
 
 ---
 
-## Growth Summary
+## Follower Growth
 
 - Starting followers: 50 (week of 2026-05-11)
 - Current followers: 54 (week of 2026-06-15, last tracked)
 - Net growth: +4 over 6 weeks (+8%)
-- Best growth week: 2026-05-25 (+4 followers, following "The Token Tax" post)
-- Volatility: -3 followers week of 2026-06-08, fully recovered by 2026-06-15
-
----
-
-## Pattern Analysis
-
-**Growth attribution**: At 54-follower base, each follow swings metrics by 2%, making statistical attribution unreliable. Single +4 spike (week of 2026-05-25) accounts for all net growth. Infrastructure economics post with specific cost data (HBM 64-68% of chip costs, agentic AI 3.2x to 50x token multipliers) correlated with only confirmed growth event. Governance and measurement moats posts showed flat or negative movement, but sample size too small for confident conclusions.
-
-**Critical data gap**: Six posts published, zero tweet-level engagement metrics. Cannot optimize hook style, thread length, completion rates, or identify bookmark and retweet drivers. Follower count alone insufficient for strategy. Manual weekly tracking from analytics.twitter.com essential.
-
-**Statistical confidence threshold**: Need 100+ follower base or 12+ weeks before topic-level recommendations become actionable. Current ±3 follower volatility creates signal-to-noise problem.
+- Best growth week: 2026-05-25 (+4 followers, topic: infrastructure cost structures with specific data)
+- Volatility: single -3 drop (2026-06-08), recovered within one week
 
 ---
 
@@ -69,22 +59,22 @@ _Pending tweet-level data._
 
 ### For the Researcher
 
-**Prioritize**: Infrastructure economics with precise cost breakdowns and multiplier effects. Token Tax post structure (specific percentages, clear cost-determines-winners framework) correlated with only growth signal. Extend framework to adjacent areas: memory manufacturers as HBM reaches 64-68% of costs, TSMC 3nm capacity constraints (demand 3x supply), datacenter power economics, CUDA switching costs.
+**Priority 1: Infrastructure economics with precise numbers.** The only confirmed growth event (2026-05-25, +4 followers) followed publication of Token Tax post featuring HBM at 64-68% of chip costs and agentic AI 3.2x to 50x token multipliers. Correlation is not causation at N=6, but specific cost breakdowns and multiplier effects are the only data point correlated with growth. Test this pattern by extending to adjacent areas: memory manufacturers (Samsung, SK Hynix) as HBM approaches two-thirds of chip costs, TSMC 3nm capacity constraints (demand 3x supply through mid-2026), datacenter power economics, CUDA switching costs quantified in migration hours or capital.
 
-**Maintain diversity**: Framework-heavy posts (measurement moats, validation scope) show no growth yet, but six-week sample at 54 followers too small to abandon. Statistical confidence requires 12+ weeks or 100+ follower base.
+**Priority 2: Build engagement dataset immediately.** Zero tweet-level metrics exist after six published posts. Without impressions, completion rates, bookmarks, retweets, and replies tracked manually from analytics.twitter.com, all content optimization is conjecture. Manual tracking required within 48 hours of each post to build comparative baseline. Cannot identify which topics drive bookmarks, which hooks maximize completion, or which posts generate reply volume until this data exists.
 
-**Build engagement dataset**: Each post needs manual tweet metrics within 48 hours. Track impressions, completion rate, bookmarks, retweets, replies. Without this, optimization remains guesswork.
+**Maintain topic diversity.** Framework posts (measurement moats, validation scope) and governance deep-dives show flat or negative follower movement, but six-week sample at 54-follower base is statistically too thin to abandon categories. Need 12+ weeks or 100+ follower base before topic recommendations become reliable. Single +4 spike accounts for all net growth; volatility of ±3 followers creates signal-to-noise problem.
 
 ### For the Tweet Thread Writer
 
-**Critical priority**: Manual tweet metrics tracking. Zero engagement data beyond follower count after six posts. Check analytics.twitter.com weekly. Thread optimization impossible without baseline data.
+**Critical gap: tweet metrics tracking.** Six posts published, zero engagement data captured beyond follower count. Thread structure, hook style, and completion rate optimization impossible without baseline data. Check analytics.twitter.com manually for each thread: impressions (reach), completion rate (how many readers finish thread), engagement breakdown (likes, bookmarks, retweets, replies). Without this, cannot test whether data-first hooks outperform questions, narratives, or counterintuitive opens.
 
-**Working hypothesis until data arrives**: Lead with counterintuitive data and specific percentages. Token economics hook (precise cost breakdowns + multiplier effects) correlated with only growth event. Test data-density-first versus narrative or question opens once comparison data available.
+**Working hypothesis (unvalidated):** Lead with counterintuitive data and specific percentages. Token Tax structure (precise cost breakdowns plus multiplier effects) correlated with only growth signal. Test data-density-first framing versus narrative or question opens once engagement data arrives for comparison.
 
-**Thread length**: Default 5-7 tweets matching blog depth (600-800 words). Test completion rates across formats once engagement data captured.
+**Thread length:** Default 5-7 tweets matching blog depth (600-800 words). Test completion rates across lengths once data captured. If 10-tweet threads show 30% drop-off at tweet 6, shorten. If 5-tweet threads maintain 80%+ completion, consider as standard.
 
-**Hook testing priority**: Once metrics arrive, compare completion rates for data-first opens with percentages, counterintuitive claims, question-based hooks, and narrative anecdotes.
+**Hook testing priority once metrics arrive:** Compare completion rates for (1) data-first opens with percentages (e.g., "HBM now 64-68% of AI chip costs"), (2) counterintuitive claims (e.g., "better chips lose to worse business models"), (3) question-based hooks, (4) narrative anecdotes. Rank by completion rate, not impressions, because completing a thread signals actual interest versus passive scroll.
 
 ---
 
-_Last updated: 2026-07-13_
+_Last updated: 2026-07-20_
