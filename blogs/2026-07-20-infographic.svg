@@ -1,0 +1,73 @@
+<svg viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg" style="font-family: Inter, system-ui, -apple-system, sans-serif; width:100%; height:auto; display:block;">
+  <!-- Background -->
+  <rect x="0" y="0" width="800" height="480" fill="#F8FAFC"/>
+  
+  <!-- Header band with accent stripe -->
+  <rect x="0" y="0" width="800" height="3" fill="#2563EB"/>
+  <rect x="0" y="3" width="800" height="52" fill="#0F172A"/>
+  <text x="400" y="37" text-anchor="middle" font-size="19" font-weight="700" fill="#FFFFFF">Moat Durability in the AI Era: 12-24 Month Windows</text>
+  
+  <!-- Shadow effects for cards -->
+  <rect x="43" y="93" width="350" height="360" rx="8" fill="#0000000D"/>
+  <rect x="407" y="93" width="350" height="360" rx="8" fill="#0000000D"/>
+  
+  <!-- Left card: Token Overhead & Distribution -->
+  <rect x="40" y="90" width="350" height="360" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="40" y="90" width="350" height="3" rx="8" fill="#2563EB"/>
+  
+  <!-- Left card header -->
+  <text x="215" y="120" text-anchor="middle" font-size="13" font-weight="600" fill="#1E3A5F">SHORT-TERM MOATS</text>
+  <text x="215" y="138" text-anchor="middle" font-size="11" fill="#94A3B8">Durability: 12-24 months</text>
+  
+  <!-- Token Overhead section -->
+  <text x="60" y="170" font-size="12" font-weight="600" fill="#0F172A">Token Overhead</text>
+  <text x="60" y="195" font-size="30" font-weight="700" fill="#2563EB">4.7x</text>
+  <text x="60" y="210" font-size="11" fill="#94A3B8">Claude vs. OpenCode inefficiency</text>
+  
+  <text x="70" y="240" font-size="12" fill="#475569">▸ 33k tokens vs. 7k per task</text>
+  <text x="70" y="260" font-size="12" fill="#475569">▸ Misaligned incentives: vendors</text>
+  <text x="85" y="276" font-size="12" fill="#475569">monetize consumption</text>
+  <text x="70" y="296" font-size="12" fill="#475569">▸ Moat collapses when cost</text>
+  <text x="85" y="312" font-size="12" fill="#475569">comparison tools launch</text>
+  <text x="70" y="332" font-size="12" fill="#475569">▸ Expires: Q4 2027</text>
+  
+  <!-- Distribution Defaults section -->
+  <text x="60" y="365" font-size="12" font-weight="600" fill="#0F172A">Distribution Defaults</text>
+  <text x="60" y="390" font-size="30" font-weight="700" fill="#F59E0B">22 days</text>
+  <text x="60" y="405" font-size="11" fill="#94A3B8">First-mover advantage window</text>
+  
+  <text x="70" y="428" font-size="12" fill="#475569">▸ Razorpay shipped Feb 11, 2026</text>
+  
+  <!-- Right card: Structural & Enterprise Moats -->
+  <rect x="404" y="90" width="350" height="360" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <rect x="404" y="90" width="350" height="3" rx="8" fill="#059669"/>
+  
+  <!-- Right card header -->
+  <text x="579" y="120" text-anchor="middle" font-size="13" font-weight="600" fill="#1E3A5F">STRUCTURAL MOATS</text>
+  <text x="579" y="138" text-anchor="middle" font-size="11" fill="#94A3B8">Durability: 3-5+ years</text>
+  
+  <!-- Regulatory section -->
+  <text x="424" y="170" font-size="12" font-weight="600" fill="#0F172A">Regulatory Compliance</text>
+  <text x="424" y="195" font-size="30" font-weight="700" fill="#059669">3-5 yrs</text>
+  <text x="424" y="210" font-size="11" fill="#94A3B8">Time to replicate licensing</text>
+  
+  <text x="434" y="240" font-size="12" fill="#475569">▸ Payment Aggregator license:</text>
+  <text x="449" y="256" font-size="12" fill="#475569">Rs 25cr + 18-24 months</text>
+  <text x="434" y="276" font-size="12" fill="#475569">▸ But: incumbents partner in</text>
+  <text x="449" y="292" font-size="12" fill="#475569">6-12 months, not build</text>
+  <text x="434" y="312" font-size="12" fill="#475569">▸ Distribution beats regulation</text>
+  
+  <!-- Data Lock-in section -->
+  <text x="424" y="345" font-size="12" font-weight="600" fill="#0F172A">Enterprise Data Lock-in</text>
+  <text x="424" y="370" font-size="30" font-weight="700" fill="#059669">3-5 yrs</text>
+  <text x="424" y="385" font-size="11" fill="#94A3B8">Migration risk tolerance timeline</text>
+  
+  <text x="434" y="408" font-size="12" fill="#475569">▸ 8+ years of CRM data</text>
+  <text x="434" y="424" font-size="12" fill="#475569">▸ Millions of records, integrations</text>
+  
+  <!-- Vertical divider -->
+  <line x1="397" y1="90" x2="397" y2="450" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="4 4"/>
+  
+  <!-- Source attribution -->
+  <text x="790" y="472" text-anchor="end" font-size="10" fill="#94A3B8">prashant-chandel.org/blog</text>
+</svg>

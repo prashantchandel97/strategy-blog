@@ -1,0 +1,32 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" style="font-family: Inter, system-ui, -apple-system, sans-serif;">
+  <!-- Background -->
+  <rect x="0" y="0" width="1200" height="630" fill="#0F172A"/>
+  
+  <!-- Top accent bar -->
+  <rect x="0" y="0" width="1200" height="5" fill="#2563EB"/>
+  
+  <!-- Decorative circles for texture -->
+  <circle cx="950" cy="100" r="300" fill="#FFFFFF" opacity="0.03"/>
+  <circle cx="250" cy="530" r="300" fill="#FFFFFF" opacity="0.03"/>
+  
+  <!-- Blog label -->
+  <text x="80" y="90" font-size="13" font-weight="600" fill="#2563EB" letter-spacing="3">STRATEGY ANALYSIS</text>
+  
+  <!-- Title - line 1 -->
+  <text x="80" y="180" font-size="64" font-weight="800" fill="#FFFFFF">Your Moat Expires</text>
+  <!-- Title - line 2 -->
+  <text x="80" y="260" font-size="64" font-weight="800" fill="#FFFFFF">Q2 2027</text>
+  
+  <!-- Divider line -->
+  <line x1="80" y1="300" x2="120" y2="300" stroke="#2563EB" stroke-width="3"/>
+  
+  <!-- Summary - line 1 -->
+  <text x="80" y="350" font-size="22" fill="#94A3B8">AI compresses competitive advantage from 5 years</text>
+  <!-- Summary - line 2 -->
+  <text x="80" y="385" font-size="22" fill="#94A3B8">to 18 months. Every moat now has a countdown timer.</text>
+  
+  <!-- Bottom brand strip -->
+  <rect x="0" y="580" width="1200" height="50" fill="#0A1628"/>
+  <text x="80" y="612" font-size="16" fill="#475569">prashant-chandel.org/blog</text>
+  <text x="1120" y="612" text-anchor="end" font-size="16" fill="#475569">2026-07-20</text>
+</svg>
